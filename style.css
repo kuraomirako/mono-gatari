@@ -1,0 +1,157 @@
+/***************************************************
+リセットcss
+***************************************************/
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+ul,
+li,
+h1,
+h2,
+p,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
+  color: #3b4043;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: #3b4043;
+}
+
+
+/***************************************************
+トップページ
+***************************************************/
+/* ヘッダー */
+header {
+  background-color: #191970;
+  width: 100%;
+  height: 70px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heading-left {
+  width: 50%;
+  margin-left: 10px;
+}
+
+.title {
+  color: white;
+  font-size: 35px;
+  text-align: left;
+}
+
+.heading-right {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.log-situation2 {
+  height: 50px;
+  width: 80px;
+  padding-top: 5px;
+  margin: 0 5px;
+  text-align: center;
+  color: white;
+  font-size: 13px;
+  border: solid 1px white;
+  border-radius: 30px;
+}
+
+.log-situation0 {
+  background-color: white;
+  height: 50px;
+  width: 80px;
+  padding-top: 5px;
+  margin: 0 5px;
+  text-align: center;
+  color: rgb(174, 146, 44);
+  font-size: 13px;
+  border: solid 1px white;
+  border-radius: 30px;
+}
+
+.menu-icon {
+  height: 50px;
+  width: 30px;
+  padding-top: 8px;
+  margin: 0 10px 0 5px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  border: solid 1px white;
+}
+
+/* カテゴリージャンル */
+.categorybar {
+  background-color: yellow;;
+  height: 45px;
+  padding: 10px;
+}
+
+.category-lists {
+  display: flex;
+  justify-content: space-around;
+}
+
+.list {
+  color: gray;
+  font-size: 20px;
+  list-style: none;
+}
+
+/* ランダムストーリー */
+.contents {
+  background-color: #fffacd;
+  height: 70vh;
+  padding: 50px 100px;
+}
+
+.content {
+  width: 1000px;
+  height: 100px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  color: gray;
+  border: solid 1px gray;
+  border-radius: 5px;
+}
+
+/* フッター */
+.footer-items {
+  background-color: #4f455c;
+  height: 100vh;
+  color: white;
+  font-size: 13px;
+}
+
+
+
+
+
+
+
+
+/***************************************************/
