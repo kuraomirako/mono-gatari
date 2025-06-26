@@ -38,7 +38,7 @@ a {
 
 
 /***************************************************
-トップページ
+ヘッダー／フッター
 ***************************************************/
 /****** ヘッダー *****************/
 header {
@@ -104,6 +104,32 @@ header {
   border: solid 1px white;
 }
 
+
+/****** フッター ***********************/
+footer {
+  background-color: #001e43;
+  height: calc(100% - 70px - 45px - 70vh);
+  font-size: 13px;
+  padding: 10px 50px 20px 50px;
+}
+
+.footer-items {
+  height: 70px;
+  color: white;
+}
+
+.information {
+  list-style: none;
+  text-align: center;
+}
+
+.copylight {
+  text-align: center;
+}
+
+/***************************************************
+トップページ
+***************************************************/
 /****** カテゴリージャンル ****************/
 .categorybar {
   background-color: yellow;;
@@ -138,22 +164,6 @@ header {
   border-radius: 5px;
 }
 
-/****** フッター ***********************/
-.footer-items {
-  background-color: #001e43;
-  height: calc(100% - 70px - 45px - 70vh);
-  color: white;
-  font-size: 13px;
-  padding-left: 50px;
-  padding-bottom: 50px;
-}
 
-
-
-
-
-
-
-
-
+/***************************************************
 /***************************************************/
