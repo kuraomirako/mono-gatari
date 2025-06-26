@@ -37,23 +37,20 @@ a {
 }
 
 
-/***************************************************
-ヘッダー／フッター
-***************************************************/
-/****** ヘッダー *****************/
+/***************************************************/
+/* ヘッダー */
 header {
-  background-color: #001e43;
-  width: 100%;
+  background-color: blue;
   height: 70px;
-  padding: 10px;
+  color: white;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  padding: 10px;
 }
 
 .heading-left {
   width: 50%;
-  margin-left: 50px;
+  margin-left: 20px;
 }
 
 .title {
@@ -87,7 +84,7 @@ header {
   padding-top: 5px;
   margin: 0 5px;
   text-align: center;
-  color: rgb(174, 146, 44);
+  color: gray;
   font-size: 13px;
   border: solid 1px white;
   border-radius: 30px;
@@ -104,12 +101,11 @@ header {
   border: solid 1px white;
 }
 
-
-/****** フッター ***********************/
+/* フッター */
 footer {
-  background-color: #001e43;
-  height: calc(100% - 70px - 45px - 70vh);
-  font-size: 13px;
+  background-color: blue;
+  height: 100px;
+  color: white;
   padding: 10px 50px 20px 50px;
 }
 
@@ -128,13 +124,19 @@ footer {
 }
 
 /***************************************************
-トップページ
+メイン領域-トップページ
+（ブラウザ全体ーヘッダー＋フッター）
 ***************************************************/
-/****** カテゴリージャンル ****************/
+.main-view {
+  background-color: #6c9a6e;
+  min-height: calc(100vh - 70px - 100px); /* 画面高 - ヘッダー - フッター */
+}
+
+/* カテゴリーバー */
 .categorybar {
-  background-color: yellow;;
+  background: yellow;
   height: 45px;
-  padding: 10px;
+  padding: 10px 20px;
 }
 
 .category-lists {
@@ -148,10 +150,9 @@ footer {
   list-style: none;
 }
 
-/******* ランダムストーリー **************/
+/* ストーリー配置 */
 .contents {
-  background-color: #fffacd;
-  height: 70vh;
+  background-color: orange;
   padding: 50px 100px;
 }
 
@@ -166,4 +167,6 @@ footer {
 
 
 /***************************************************
-/***************************************************/
+メイン領域-ストーリー詳細ページ
+（ブラウザ全体ーヘッダー＋フッター）
+***************************************************/
