@@ -124,7 +124,6 @@ footer {
 }
 
 /***************************************************
-メイン領域-トップページ
 （ブラウザ全体ーヘッダー＋フッター）
 ***************************************************/
 .main-view {
@@ -132,6 +131,11 @@ footer {
   min-height: calc(100vh - 70px - 100px); /* 画面高 - ヘッダー - フッター */
 }
 
+
+/***************************************************
+メイン領域-トップページ
+（ブラウザ全体ーヘッダー＋フッター）
+***************************************************/
 /* カテゴリーバー */
 .categorybar {
   background: yellow;
@@ -170,3 +174,36 @@ footer {
 メイン領域-ストーリー詳細ページ
 （ブラウザ全体ーヘッダー＋フッター）
 ***************************************************/
+.main-contents {
+  background-color: aquamarine;
+  display: flex;
+}
+
+.sidebar {
+  background-color: blueviolet;
+  width: 200px;
+}
+
+.story-content {
+  width: calc(100% - 200px);
+  background-color: brown
+}
+
+.comment-form {
+  background-color: pink;
+  height: 50px;
+  margin-left: 200px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.input-text {
+  height: 40px;
+  width:
+}
+
+.submit-btn {
+  height: 40px;
+}
+
