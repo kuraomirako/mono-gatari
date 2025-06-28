@@ -1,10 +1,29 @@
-<div class="contents row">
-  <% @tweets.each do |tweet| %>
-    <div class="content_post" style="background-image: url(<%= tweet.image %>);">
-      <p><%= tweet.text %></p>
-      <span class="name">
-        <%= tweet.name %>
-      </span>
+<div class="main-view"><!--固定 メイン領域(開始)-->
+  <div class="categorybar">
+    <ul class="category-lists">
+          <li class="list">実話</li>
+          <li class="list">創作</li>
+          <li class="list">日常</li>
+          <li class="list">人間関係</li>
+          <li class="list">仕事勉強</li>
+          <li class="list">ファンタジー</li>
+          <li class="list">SF</li>
+          <li class="list">恋愛</li>
+    </ul>
+  </div>
+  <div class="contents">
+    <div class="content">
+      <div class="content-sub">
+        <div class="category-tag">実話</div>
+        <div class="genre-tag">SF</div>
+        <div class="character count">〇〇文字</div>
+        <div class="post-date">2025.03.02</div>
+      </div>
+      <div class="story-title">タイトル</div>
+      <div class="story-main-text">ここに本文</div>
     </div>
-  <% end %>
-</div>
+    <div class="content"># ここにランダムにストーリーを配置予定</div>
+    <div class="content"># ここにランダムにストーリーを配置予定</div>
+    <div class="content"># ここにランダムにストーリーを配置予定</div>
+  </div>
+</div><!--固定 メイン領域(終了)-->
