@@ -14,9 +14,9 @@ ActiveRecord::Schema[7.1].define(version: 2025_06_27_073905) do
   create_table "stories", charset: "utf8mb3", force: :cascade do |t|
     t.string "title", null: false
     t.text "body", null: false
-    t.integer "category", null: false
-    t.integer "genre", null: false
-    t.boolean "draft", null: false
+    t.integer "category_id", null: false
+    t.integer "genre_id", null: false
+    t.boolean "draft", default: false, null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

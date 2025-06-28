@@ -1,0 +1,31 @@
+<div class="main-view"><!--固定 メイン領域(開始)-->
+  <%= form_with model: @story, local: true, data: { turbo: false } do |f| %>
+  <div class="choice-area"><!--カテゴリージャンル選択・文字数エリア-->
+    <div class="category-choice">カテゴリー選択
+      <%= f.collection_select(:category_id, @categories, :id, :name, {}, {class:"select-box", id:"story-category"}) %>
+    </div>
+    <div class="genre-choice">ジャンル選択
+      <%= f.collection_select(:genre_id, @genres, :id, :name, {}, {class:"select-box", id:"story-genre"}) %>
+    </div>
+    <div class="count-now">〇〇文字</div>
+  </div>
+
+  <div class="input-area"><!--本文入力エリア-->
+    <div class="input-title">
+      物語タイトル
+      <%= f.text_field :title, class:"f-input-title", id:"story-title-input", placeholder:"タイトルを入力してください", maxlength:"100" %>
+    </div>
+    <div class="input-text">
+    ここに物語を入力
+    <%= f.text_area :body, class:"f-input-text", id:"story-body-input", placeholder:"本文を入力してください(300文字未満は投稿できません)" ,rows:"15" ,maxlength:"10000" %>
+    </div>
+  </div>
+
+  <div class="confirm-area"><!--確認エリア-->
+    <%= f.submit "投稿する", name: "post", class: "post-btn" %>
+    <!--  linkto '投稿確認画面', "#", class: "post-confirm-btn" 　後でcomfirmアクションとビューを作成する　-->
+    <!--  f.submit "下書き保存", name: "draft", class: "draft-confirm-btn"  　後でdraft機能を実装する　-->
+    <%= link_to 'この内容を破棄', root_path, class: "delete-confirm-btn" %>
+  </div>
+  <% end %>
+</div><!--固定 メイン領域(終了)-->

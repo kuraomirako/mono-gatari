@@ -1,0 +1,302 @@
+/***************************************************
+リセットcss
+***************************************************/
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+ul,
+li,
+h1,
+h2,
+p,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
+  color: #3b4043;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: #3b4043;
+}
+
+
+/***************************************************/
+/* ヘッダー */
+header {
+  background-color: blue;
+  height: 70px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.heading-left {
+  width: 50%;
+  margin-left: 20px;
+}
+
+.title-logo {
+  color: white;
+  font-size: 35px;
+  text-align: left;
+}
+
+.heading-right {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.log-situation2 {
+  height: 50px;
+  width: 80px;
+  padding-top: 5px;
+  margin: 0 5px;
+  text-align: center;
+  color: white;
+  font-size: 13px;
+  border: solid 1px white;
+  border-radius: 30px;
+}
+
+.log-situation0 {
+  background-color: white;
+  height: 50px;
+  width: 80px;
+  padding-top: 5px;
+  margin: 0 5px;
+  text-align: center;
+  color: gray;
+  font-size: 13px;
+  border: solid 1px white;
+  border-radius: 30px;
+}
+
+.new-post {
+  background-color: aqua;
+  height: 50px;
+  width: 80px;
+  padding-top: 5px;
+  margin: 0 5px;
+  text-align: center;
+  color: gray;
+  font-size: 13px;
+  border: solid 1px white;
+  border-radius: 30px;
+}
+
+.menu-icon {
+  height: 50px;
+  width: 30px;
+  padding-top: 8px;
+  margin: 0 10px 0 5px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  border: solid 1px white;
+}
+
+/* フッター */
+footer {
+  background-color: blue;
+  height: 100px;
+  color: white;
+  padding: 10px 50px 20px 50px;
+}
+
+.footer-items {
+  height: 70px;
+  color: white;
+}
+
+.information {
+  list-style: none;
+  text-align: center;
+}
+
+.copylight {
+  text-align: center;
+}
+
+/***************************************************
+（ブラウザ全体ーヘッダー＋フッター）
+***************************************************/
+.main-view {
+  background-color: #6c9a6e;
+  min-height: calc(100vh - 70px - 100px); /* 画面高 - ヘッダー - フッター */
+}
+
+
+/***************************************************
+メイン領域-トップページ
+（ブラウザ全体ーヘッダー＋フッター）
+***************************************************/
+/* カテゴリーバー */
+.categorybar {
+  background: yellow;
+  height: 45px;
+  padding: 10px 20px;
+}
+
+.category-lists {
+  display: flex;
+  justify-content: space-around;
+}
+
+.list {
+  color: gray;
+  font-size: 20px;
+  list-style: none;
+}
+
+/* ストーリー配置 */
+.contents {
+  background-color: orange;
+  padding: 50px 100px;
+}
+
+.content {
+  width: calc(100% - 120px);
+  height: 100px;
+  margin-bottom: 20px;
+  color: gray;
+  border: solid 1px gray;
+  border-radius: 5px;
+}
+
+.content-sub {
+  display: flex;
+}
+
+
+/***************************************************
+メイン領域-ストーリー詳細ページ
+（ブラウザ全体ーヘッダー＋フッター）
+***************************************************/
+.main-contents {
+  background-color: aquamarine;
+  display: flex;
+}
+
+.sidebar {
+  background-color: blueviolet;
+  width: 200px;
+}
+
+.story-content {
+  width: calc(100% - 200px);
+  background-color: brown
+}
+
+.comment-form {
+  background-color: pink;
+  height: 50px;
+  margin-left: 200px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.input-text {
+  height: 40px;
+  width:
+}
+
+.submit-btn {
+  height: 40px;
+}
+
+
+/***************************************************
+メイン領域-ストーリー詳細ページ
+（ブラウザ全体ーヘッダー＋フッター）
+***************************************************/
+/* カテゴリージャンル選択・文字数エリア */
+.choice-area {
+  background-color: yellowgreen;
+  height: 40px;
+  display: flex;
+}
+
+.category-choice {
+  border: 1px solid white;
+}
+
+.genre-choice {
+  border: 1px solid white;
+}
+
+.count-now {
+  border: 1px solid white;
+}
+
+/* 本文入力エリア */
+.input-area {
+  background-color: plum;
+  height: 700px;
+}
+
+/* 確認エリア */
+.confirm-area {
+  background-color: aquamarine;
+  height: 40px;
+  display: flex;;
+}
+
+.post-confirm-btn {
+  border: 1px solid white;
+}
+
+.draft-confirm-btn {
+  border: 1px solid white;
+}
+
+.delete-confirm-btn {
+  border: 1px solid white;
+}
+
+
+/***************************************************
+マイページ
+***************************************************/
+.mp-main-contents {
+  background-color: red;
+  display: flex;
+}
+
+.mp-sidebar {
+  background-color: blueviolet;
+  width: 200px;
+}
+
+.right-contents {
+  width: calc(100% - 200px);
+  background-color: brown
+}
+
+.introduce {
+  background-color: rosybrown;
+}
+
+.my-story-content {
+  background-color: pink;
+}
+/***************************************************/
