@@ -1,7 +1,7 @@
 class StoriesController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_select_values, only: [:new, :create]
-  before_action :set_story, only: [:show, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :set_select_values, only: [:new, :create, :edit, :update]
+  before_action :set_story, only: [:show, :edit, :update, :destroy]
 
   def index
     @stories = Story.all
@@ -33,6 +33,11 @@ class StoriesController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @story.destroy
+    redirect_to root_path
   end
 
   private

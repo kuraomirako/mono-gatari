@@ -18,13 +18,13 @@
       <div class="story-item1">
         <div class="category-tag"><%= @story.category.name %></div>
         <div class="genre-tag"><%= @story.genre.name %></div>
-        <div class="character count">2000文字</div><!--後ほどカウントするよう設定する-->
+        <div class="show-character-count"> <%= "#{@story.body.length}文字" %></div>
         <div class="post-date"><%= @story.created_at.strftime("%Y.%m.%d") %></div>
         <% if user_signed_in? && current_user.id == @story.user_id %>
         <div class="detail">▽
           <ul class="detail_list">
             <li><%= link_to '編集', edit_story_path(@story.id), method: :get, class: "story-edit" %></li>
-            <li><%= link_to '削除', story_path(@story.id), data: {turbo_method: :delete}, class:"story-destroy" %></li>
+            <li><%= link_to '削除', root_path(@story.id), data: {turbo_method: :delete}, class:"story-destroy" %></li>
           </ul>
         <% end %>
         </div>

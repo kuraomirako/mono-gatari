@@ -1,13 +1,15 @@
 <div class="main-view"><!--固定 メイン領域(開始)-->
   <%= form_with model: @story, local: true, data: { turbo: false } do |f| %>
   <div class="choice-area"><!--カテゴリージャンル選択・文字数エリア-->
-    <div class="category-choice">カテゴリー選択
+    <div class="category-choice">
+      カテゴリー選択
       <%= f.collection_select(:category_id, @categories, :id, :name, {}, {class:"select-box", id:"story-category"}) %>
     </div>
-    <div class="genre-choice">ジャンル選択
+    <div class="genre-choice">
+      ジャンル選択
       <%= f.collection_select(:genre_id, @genres, :id, :name, {}, {class:"select-box", id:"story-genre"}) %>
     </div>
-    <div class="count-now">〇〇文字</div>
+    <div class="count-now" id="char-count">0文字</div>
   </div>
 
   <div class="input-area"><!--本文入力エリア-->
