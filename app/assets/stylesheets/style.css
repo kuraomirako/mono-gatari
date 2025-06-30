@@ -193,23 +193,37 @@ footer {
 ***************************************************/
 .main-contents {
   background-color: aquamarine;
+  height: calc(100vh - 70px - 100px);
   display: flex;
 }
 
+/* サイドバー */
 .sidebar {
   background-color: blueviolet;
   width: 200px;
 }
 
 .story-content {
+  background-color: brown;
   width: calc(100% - 200px);
-  background-color: brown
 }
 
+.story-item1 {
+  background-color: coral;
+  height: 40px;
+  display: flex;
+}
+
+.story-item2 {
+  background-color: chartreuse;
+  height: 600px;
+  overflow-y: auto;
+}
+
+/* コメント送信欄 */
 .comment-form {
   background-color: pink;
   height: 50px;
-  margin-left: 200px;
   padding-left: 20px;
   display: flex;
   align-items: center;
@@ -217,16 +231,22 @@ footer {
 
 .input-text {
   height: 40px;
+  width: 40vw;
   width:
 }
 
-.submit-btn {
+.comment-submit-btn {
   height: 40px;
 }
 
+/*コメント一覧*/
+.all-comments {
+  background-color: beige;
+  height: 100px;
+}
 
 /***************************************************
-メイン領域-ストーリー詳細ページ
+メイン領域-ストーリー投稿ページ
 （ブラウザ全体ーヘッダー＋フッター）
 ***************************************************/
 /* カテゴリージャンル選択・文字数エリア */
