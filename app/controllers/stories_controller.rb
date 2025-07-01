@@ -16,12 +16,12 @@ class StoriesController < ApplicationController
     if @story.save
       redirect_to root_path
     else
-      Rails.logger.debug @story.errors.full_messages
       render :new, status: :unprocessable_entity
     end
   end
 
   def show
+    @comments = @story.comments.includes(:user)
   end
 
   def edit

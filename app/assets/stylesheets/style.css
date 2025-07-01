@@ -221,18 +221,10 @@ footer {
 }
 
 /* コメント送信欄 */
-.comment-form {
+.comment-content {
   background-color: pink;
   height: 50px;
   padding-left: 20px;
-  display: flex;
-  align-items: center;
-}
-
-.input-text {
-  height: 40px;
-  width: 40vw;
-  width:
 }
 
 .comment-submit-btn {
@@ -242,7 +234,8 @@ footer {
 /*コメント一覧*/
 .all-comments {
   background-color: beige;
-  height: 100px;
+  height: 500px;
+  overflow-y: auto;
 }
 
 /***************************************************

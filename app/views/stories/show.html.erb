@@ -21,10 +21,11 @@
         <div class="show-character-count"> <%= "#{@story.body.length}文字" %></div>
         <div class="post-date"><%= @story.created_at.strftime("%Y.%m.%d") %></div>
         <% if user_signed_in? && current_user.id == @story.user_id %>
-        <div class="detail">▽
-          <ul class="detail_list">
+        <div class="detail">
+          <span class="toggle-detail">▽</span>
+          <ul class="detail_list" style="display: none;">
             <li><%= link_to '編集', edit_story_path(@story.id), method: :get, class: "story-edit" %></li>
-            <li><%= link_to '削除', root_path(@story.id), data: {turbo_method: :delete}, class:"story-destroy" %></li>
+            <li><%= link_to '削除', story_path(@story.id), data: {turbo_method: :delete}, class:"story-destroy" %></li>
           </ul>
         <% end %>
         </div>
@@ -35,12 +36,25 @@
       </div>
 
       <div class="comment-content">
-        <form class="comment-form">
-          <input class="input-text" placeholder="コメントを入力" type="text">
-          <input class="comment-submit-btn" type="submit" value="送信">
-        </form>
+        <%= form_with model: [@story, Comment.new], local: true, data: { turbo: false } do |f| %>
+          <%= f.text_field :comment_box, class:"f-input-comment", id:"comment-input", placeholder:"コメントを入力" %>
+          <%= f.submit "送信", name: "post-comment", class: "post-comment-btn" %>
+        <% end %>
         <div class="all-comments">
-          ここにコメント一覧がくる
+          <% @comments.each do |comment| %>
+            <div>
+              <%= comment.user.nickname %>：<%= comment.comment_box %>
+              <span class="comment-post-date"><%= comment.created_at.strftime("%Y.%m.%d") %></span>
+              <% if user_signed_in? && current_user.id == comment.user_id %>
+                <div class="comment-delete">
+                  <span class="toggle-comment-delete">・・・</span>
+                  <ul class=comment-action-list style="display: none;">
+                    <li><%= link_to '削除', story_comment_path(comment.id), data: {turbo_method: :delete}, class:"comment-destroy" %></li>
+                  </ul>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
