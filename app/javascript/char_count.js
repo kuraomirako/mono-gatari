@@ -1,11 +1,11 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbo:load', () => {
   const textarea = document.getElementById('story-body-input');
-  const counter = document.getElementById('char-count');
+  const countDisplay = document.getElementById('char-count');
 
-  if (textarea && counter) {
+  if (textarea && countDisplay) {
+    countDisplay.textContent = `${textarea.value.length}文字`;
     textarea.addEventListener('input', () => {
-      const length = textarea.value.length;
-      counter.textContent = `${length}文字`;
+      countDisplay.textContent = `${textarea.value.length}文字`;
     });
   }
 });

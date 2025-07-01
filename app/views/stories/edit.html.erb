@@ -11,7 +11,7 @@
       <%= f.collection_select(:genre_id, @genres, :id, :name, {}, { class: "select-box", id: "story-genre" }) %>
     </div>
     <div class="count-now">
-      <%= "#{@story.body.length}文字" %> <!-- 現在の本文の文字数を表示 -->
+      <div class="edit-count-now" id="char-count">0文字</div><!-- 現在の本文の文字数を表示 -->
     </div>
   </div>
 
