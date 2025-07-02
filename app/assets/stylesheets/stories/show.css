@@ -1,51 +1,108 @@
+/* メイン */
 .show-main {
-  background-color: #6c9a6e;
-  min-height: calc(100vh - 70px - 100px); /* 画面高 - ヘッダー - フッター */
+  background: linear-gradient(to bottom, #17184b, #274a78);
 }
 
 .main-contents {
-  background-color: aquamarine;
-  height: calc(100vh - 70px - 100px);
   display: flex;
 }
 
 /* サイドバー */
 .sidebar {
-  background-color: blueviolet;
   width: 200px;
+  flex-shrink: 0;
 }
 
-.story-content {
-  background-color: brown;
+/* ストーリー配置 */
+.show-right-contents {
   width: calc(100% - 200px);
+  margin-right: 120px;
 }
 
-.story-item1 {
-  background-color: coral;
-  height: 40px;
+.show-story-content {
+  margin-top: 30px;
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+
+/* ストーリーアイテム */
+.show-story-item {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* タグ箱：カテゴリー、ジャンル */
+.show-story-item1 {
   display: flex;
 }
 
-.story-item2 {
-  background-color: chartreuse;
-  height: 600px;
+/* その他情報箱：文字数、日付、詳細メニュー */
+.show-story-item2 {
+  display: flex;
+}
+
+/* タイトル、本文 */
+.show-story-main {
+  min-height: 700px;
+  padding: 10px;
   overflow-y: auto;
+}
+
+.show-story-title {
+  margin-left: 10px;
+  margin-right: 5px;
+  border-bottom: 1px solid gray;
+  font-size: 20px;
+}
+
+.show-story-text {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 5px;
 }
 
 /* コメント送信欄 */
 .comment-content {
-  background-color: pink;
-  height: 50px;
-  padding-left: 20px;
+  background-color: plum;
+  min-height: 200px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  padding: 5px 10px 5px 5px;
 }
 
-.comment-submit-btn {
+.f-input-comment {
   height: 40px;
+  width: 90%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size: 15px;
 }
 
-/*コメント一覧*/
+.post-comment-btn {
+  height: 40px;
+  width: 70px;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size: 13px;
+}
+
+/* コメント欄 */
 .all-comments {
-  background-color: beige;
-  height: 500px;
-  overflow-y: auto;
+  margin-top: 10px;
+}
+
+.one-comment {
+  border-bottom: 1px solid gray;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.one-comment-info {
+  display: flex;
 }

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // ▽ の編集・削除メニュー
+  // ▽ 詳細ページの編集・削除メニュー
   const toggleDetail = document.querySelector('.toggle-detail');
   const detailList = document.querySelector('.detail_list');
 
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ・・・ のコメント削除メニュー
+  // ▽ 詳細ページのコメント削除メニュー
   const toggleCommentDeletes = document.querySelectorAll('.toggle-comment-delete');
 
   toggleCommentDeletes.forEach(toggle => {

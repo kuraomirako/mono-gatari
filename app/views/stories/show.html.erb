@@ -1,8 +1,9 @@
 <%= render "shared/header" %>  <!-- ヘッダーを呼び出す -->
-<div class="main-view"><!--固定 メイン領域(開始)-->
+<div class="show-main"><!--固定 メイン領域(開始)-->
 
   <div class="main-contents">
-    <div class="sidebar">
+
+    <div class="sidebar"><!-- サイドバー -->
       <div class="contributor-icon">🟢</div><!-- アイコン入れる -->
       <div class="contributor-name"><%= @story.user.nickname %>さんの投稿</div>
       <%= link_to 'トップページへ戻る', root_path, class: "return-top-page" %>
@@ -16,51 +17,62 @@
       </div>
     </div>
 
-    <div class="story-content">
-      <div class="story-item1">
-        <div class="category-tag"><%= @story.category.name %></div>
-        <div class="genre-tag"><%= @story.genre.name %></div>
-        <div class="show-character-count"> <%= "#{@story.body.length}文字" %></div>
-        <div class="post-date"><%= @story.created_at.strftime("%Y.%m.%d") %></div>
-        <% if user_signed_in? && current_user.id == @story.user_id %>
-        <div class="detail">
-          <span class="toggle-detail">▽</span>
-          <ul class="detail_list" style="display: none;">
-            <li><%= link_to '編集', edit_story_path(@story.id), method: :get, class: "story-edit" %></li>
-            <li><%= link_to '削除', story_path(@story.id), data: {turbo_method: :delete}, class:"story-destroy" %></li>
-          </ul>
-        <% end %>
+    <div class="show-right-contents">
+
+      <div class="show-story-content"><!-- ストーリー配置 -->
+        <div class="show-story-item">
+          <div class="show-story-item1">
+            <div class="show-category-tag"><%= @story.category.name %></div>
+            <div class="show-genre-tag"><%= @story.genre.name %></div>
+          </div>
+          <div class="show-story-item2">
+            <div class="show-character-count"> <%= "#{@story.body.length}文字" %></div>
+            <div class="show-post-date"><%= @story.created_at.strftime("%Y.%m.%d") %></div>
+            <div class="detail">
+              <% if user_signed_in? && current_user.id == @story.user_id %>
+              <span class="toggle-detail">▽</span>
+              <ul class="detail_list" style="display: none;">
+                <li><%= link_to '編集', edit_story_path(@story.id), method: :get, class: "story-edit" %></li>
+                <li><%= link_to '削除', story_path(@story.id), data: {turbo_method: :delete}, class:"story-destroy" %></li>
+              </ul>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="show-story-main">
+          <div class="show-story-title"><%= @story.title %></div>
+          <div class="show-story-text"><%= @story.body %></div>
         </div>
       </div>
-      <div class="story-item2">
-        <div class="show-story-title"><%= @story.title %></div>
-        <div class="show-story-text"><%= @story.body %></div>
-      </div>
 
-      <div class="comment-content">
+      <div class="comment-content"><!-- コメント欄 -->
         <%= form_with model: [@story, Comment.new], local: true, data: { turbo: false } do |f| %>
           <%= f.text_field :comment_box, class:"f-input-comment", id:"comment-input", placeholder:"コメントを入力" %>
           <%= f.submit "送信", name: "post-comment", class: "post-comment-btn" %>
         <% end %>
-        <div class="all-comments">
+        <div class="all-comments"><!-- コメント一覧 -->
           <% @comments.each do |comment| %>
-            <div>
-              <%= comment.user.nickname %>：<%= comment.comment_box %>
-              <span class="comment-post-date"><%= comment.created_at.strftime("%Y.%m.%d") %></span>
-              <% if user_signed_in? && current_user.id == comment.user_id %>
+            <div class="one-comment"><!-- １つのコメント -->
+              <div class="comment-user"><%= comment.user.nickname %>：<%= comment.comment_box %></div>
+              <div  class="one-comment-info">
+                <div class="comment-post-date"><%= comment.created_at.strftime("%Y.%m.%d") %></div>
+                <% if user_signed_in? && current_user.id == comment.user_id %>
                 <div class="comment-delete">
-                  <span class="toggle-comment-delete">・・・</span>
+                  <span class="toggle-comment-delete">▽</span>
                   <ul class=comment-action-list style="display: none;">
                     <li><%= link_to '削除', story_comment_path(comment.id), data: {turbo_method: :delete}, class:"comment-destroy" %></li>
                   </ul>
                 </div>
-              <% end %>
+                <% end %>
+              </div>
             </div>
           <% end %>
+
         </div>
       </div>
+
     </div>
   </div>
 
 </div><!--固定 メイン領域(終了)-->
- <%= render "shared/footer" %>  <!-- フッターを呼び出す -->
+<%= render "shared/footer" %>  <!-- フッターを呼び出す -->

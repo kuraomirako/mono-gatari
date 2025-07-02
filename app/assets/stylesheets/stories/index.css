@@ -52,6 +52,7 @@
   display: flex;
 }
 
-.index-story-item3 {
+/* タイトル、本文 */
+.index-story-main {
   padding-top: 5px;
 }
