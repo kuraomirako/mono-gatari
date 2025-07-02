@@ -1,48 +1,107 @@
+/* メイン */
 .new-main {
-  background-color: #6c9a6e;
-  min-height: calc(100vh - 70px - 100px); /* 画面高 - ヘッダー - フッター */
+  background-color: #c1e4e9;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-bottom: 50px;
 }
 
-/* カテゴリージャンル選択・文字数エリア */
+/* 選択エリア */
 .choice-area {
-  background-color: yellowgreen;
-  height: 40px;
   display: flex;
 }
 
+/* カテゴリー選択 */
 .category-choice {
-  border: 1px solid white;
+  margin: 5px;
+  margin-right: 20px;
 }
 
+/* プルダウン */
+.select-box {
+  width: 120px;
+  height: 40px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 15px;
+  border: 1px solid gray;
+}
+
+/* ジャンル選択 */
 .genre-choice {
-  border: 1px solid white;
+  margin: 5px;
+  margin-right: 20px;
 }
 
+/* 文字数表示 */
 .count-now {
-  border: 1px solid white;
+  margin: 5px;
+  margin-left: 50px;
+  padding-top: 8px;
 }
 
-/* 本文入力エリア */
+/* 入力エリア */
 .input-area {
-  background-color: plum;
-  height: 700px;
+  padding-bottom: 50px;
+}
+
+/* 文字数注意書き */
+.information {
+  font-size: 13px;
+}
+
+.input-title {
+  margin-top: 15px;
+}
+
+.input-text {
+  margin-top: 30px;
+}
+
+.f-input-title {
+  height: 40px;
+  width: 100%;
+  margin-top: 5px;
+  padding: 10px;
+  overflow-x: auto;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size: 15px;
+}
+
+.f-input-text {
+  width: 100%;
+  margin-top: 5px;
+  padding: 15px;
+  overflow-y: auto;
+  border-radius: 5px;
+  border: 1px solid gray;
+  font-size: 15px;
 }
 
 /* 確認エリア */
 .confirm-area {
-  background-color: aquamarine;
-  height: 40px;
-  display: flex;;
+  margin-bottom: 50px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
 }
 
-.post-confirm-btn {
-  border: 1px solid white;
-}
-
-.draft-confirm-btn {
-  border: 1px solid white;
+.post-btn {
+  width: 150px;
+  padding: 5px;
+  margin-right: 50px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 1px solid gray;
 }
 
 .delete-confirm-btn {
-  border: 1px solid white;
+  width: 150px;
+  font-size: 15px;
+  padding: 5px;
+  padding-top: 8px;
+  border-radius: 10px;
+  border: solid 1px gray;
+  text-align: center;
 }

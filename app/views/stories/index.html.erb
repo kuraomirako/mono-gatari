@@ -3,31 +3,36 @@
 
   <div class="categorybar">
     <ul class="category-lists">
-          <li class="list">実話</li>
-          <li class="list">創作</li>
-          <li class="list">日常</li>
-          <li class="list">人間関係</li>
-          <li class="list">仕事勉強</li>
-          <li class="list">ファンタジー</li>
-          <li class="list">SF</li>
-          <li class="list">恋愛</li>
+          <li class="category-list">実話</li>
+          <li class="category-list">創作</li>
+          <li class="category-list">日常</li>
+          <li class="category-list">人間関係</li>
+          <li class="category-list">仕事勉強</li>
+          <li class="category-list">ファンタジー</li>
+          <li class="category-list">SF</li>
+          <li class="category-list">恋愛</li>
     </ul>
   </div>
-  
-  <div class="contents">
-    <div class="content">
-      <div class="content-sub">
-        <div class="category-tag">実話</div>
-        <div class="genre-tag">SF</div>
-        <div class="character count">〇〇文字</div>
-        <div class="post-date">2025.03.02</div>
+
+  <div class="index-contents">
+    <% @stories.each do |story| %>
+    <div class="one-content">
+      <div class="index-story-item">
+        <div class="index-story-item1">
+          <div class="category-tag"><%= story.category.name %></div>
+          <div class="genre-tag"><%= story.genre.name %></div>
+        </div>
+        <div class="index-story-item2">
+          <div class="show-character-count"> <%= "#{story.body.length}文字" %></div>
+          <div class="post-date"><%= story.created_at.strftime("%Y.%m.%d") %></div>
+        </div>
       </div>
-      <div class="story-title">タイトル</div>
-      <div class="story-main-text">ここに本文</div>
+      <div class="index-story-item3">
+        <div class="story-title"><%= story.title %></div>
+        <div class="story-main-text"><%= truncate(story.body, length: 100) %></div>
+      </div>
     </div>
-    <div class="content"># ここにランダムにストーリーを配置予定</div>
-    <div class="content"># ここにランダムにストーリーを配置予定</div>
-    <div class="content"># ここにランダムにストーリーを配置予定</div>
+    <% end %>
   </div>
 
 </div><!--固定 メイン領域(終了)-->

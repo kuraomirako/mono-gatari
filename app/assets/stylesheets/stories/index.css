@@ -1,10 +1,11 @@
+/* メイン */
 .index-main {
-  background-color: #6c9a6e;
+  background: linear-gradient(to bottom, #17184b, #274a78);
 }
 
 /* カテゴリーバー */
 .categorybar {
-  background: yellow;
+  background: #274a78;
   padding: 5px 20px;
 }
 
@@ -13,27 +14,44 @@
   justify-content: space-around;
 }
 
-.list {
-  color: gray;
+.category-list {
+  color: #eaf4fc;
   font-size: 20px;
   list-style: none;
 }
 
 /* ストーリー配置 */
-.contents {
-  background-color: orange;
-  padding: 50px 100px;
+.index-contents {
+  margin-top: 50px;
+  padding-bottom: 100px;
+  margin-left: 200px;
 }
 
-.content {
+/* 1つの新着ストーリー */
+.one-content {
   width: calc(100% - 120px);
-  height: 100px;
   margin-bottom: 20px;
   color: gray;
   border: solid 1px gray;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
-.content-sub {
+/* ストーリーアイテム */
+.index-story-item {
   display: flex;
+  justify-content: space-between;
+}
+
+/* タグ箱：カテゴリー、ジャンル */
+.index-story-item1 {
+  display: flex;
+}
+
+/* その他情報箱：文字数、日付 */
+.index-story-item2 {
+  display: flex;
+}
+
+.index-story-item3 {
+  padding-top: 5px;
 }
