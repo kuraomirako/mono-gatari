@@ -1,0 +1,41 @@
+.index-main {
+  background-color: #6c9a6e;
+  min-height: calc(100vh - 70px - 100px); /* 画面高 - ヘッダー - フッター */
+}
+
+/* カテゴリーバー */
+.categorybar {
+  background: yellow;
+  height: 45px;
+  padding: 10px 20px;
+}
+
+.category-lists {
+  display: flex;
+  justify-content: space-around;
+}
+
+.list {
+  color: gray;
+  font-size: 20px;
+  list-style: none;
+}
+
+/* ストーリー配置 */
+.contents {
+  background-color: orange;
+  padding: 50px 100px;
+}
+
+.content {
+  width: calc(100% - 120px);
+  height: 100px;
+  margin-bottom: 20px;
+  color: gray;
+  border: solid 1px gray;
+  border-radius: 5px;
+}
+
+.content-sub {
+  display: flex;
+}

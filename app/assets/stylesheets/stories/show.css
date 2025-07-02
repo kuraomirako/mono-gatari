@@ -1,0 +1,51 @@
+.show-main {
+  background-color: #6c9a6e;
+  min-height: calc(100vh - 70px - 100px); /* 画面高 - ヘッダー - フッター */
+}
+
+.main-contents {
+  background-color: aquamarine;
+  height: calc(100vh - 70px - 100px);
+  display: flex;
+}
+
+/* サイドバー */
+.sidebar {
+  background-color: blueviolet;
+  width: 200px;
+}
+
+.story-content {
+  background-color: brown;
+  width: calc(100% - 200px);
+}
+
+.story-item1 {
+  background-color: coral;
+  height: 40px;
+  display: flex;
+}
+
+.story-item2 {
+  background-color: chartreuse;
+  height: 600px;
+  overflow-y: auto;
+}
+
+/* コメント送信欄 */
+.comment-content {
+  background-color: pink;
+  height: 50px;
+  padding-left: 20px;
+}
+
+.comment-submit-btn {
+  height: 40px;
+}
+
+/*コメント一覧*/
+.all-comments {
+  background-color: beige;
+  height: 500px;
+  overflow-y: auto;
+}

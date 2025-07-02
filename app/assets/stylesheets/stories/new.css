@@ -1,0 +1,48 @@
+.new-main {
+  background-color: #6c9a6e;
+  min-height: calc(100vh - 70px - 100px); /* 画面高 - ヘッダー - フッター */
+}
+
+/* カテゴリージャンル選択・文字数エリア */
+.choice-area {
+  background-color: yellowgreen;
+  height: 40px;
+  display: flex;
+}
+
+.category-choice {
+  border: 1px solid white;
+}
+
+.genre-choice {
+  border: 1px solid white;
+}
+
+.count-now {
+  border: 1px solid white;
+}
+
+/* 本文入力エリア */
+.input-area {
+  background-color: plum;
+  height: 700px;
+}
+
+/* 確認エリア */
+.confirm-area {
+  background-color: aquamarine;
+  height: 40px;
+  display: flex;;
+}
+
+.post-confirm-btn {
+  border: 1px solid white;
+}
+
+.draft-confirm-btn {
+  border: 1px solid white;
+}
+
+.delete-confirm-btn {
+  border: 1px solid white;
+}

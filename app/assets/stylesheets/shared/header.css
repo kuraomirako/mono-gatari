@@ -1,0 +1,75 @@
+/* ヘッダー */
+header {
+  background-color: blue;
+  height: 70px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.heading-left {
+  width: 50%;
+  margin-left: 20px;
+}
+
+.title-logo {
+  color: white;
+  font-size: 35px;
+  text-align: left;
+}
+
+.heading-right {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.log-situation2 {
+  height: 50px;
+  width: 80px;
+  padding-top: 5px;
+  margin: 0 5px;
+  text-align: center;
+  color: white;
+  font-size: 13px;
+  border: solid 1px white;
+  border-radius: 30px;
+}
+
+.log-situation0 {
+  background-color: white;
+  height: 50px;
+  width: 80px;
+  padding-top: 5px;
+  margin: 0 5px;
+  text-align: center;
+  color: gray;
+  font-size: 13px;
+  border: solid 1px white;
+  border-radius: 30px;
+}
+
+.new-post {
+  background-color: aqua;
+  height: 50px;
+  width: 80px;
+  padding-top: 5px;
+  margin: 0 5px;
+  text-align: center;
+  color: gray;
+  font-size: 13px;
+  border: solid 1px white;
+  border-radius: 30px;
+}
+
+.menu-icon {
+  height: 50px;
+  width: 30px;
+  padding-top: 8px;
+  margin: 0 10px 0 5px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  border: solid 1px white;
+}

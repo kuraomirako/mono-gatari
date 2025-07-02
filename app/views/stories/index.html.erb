@@ -1,4 +1,6 @@
-<div class="main-view"><!--固定 メイン領域(開始)-->
+<%= render "shared/header" %>  <!-- ヘッダーを呼び出す -->
+<div class="index-main"><!--固定 メイン領域(開始)-->
+
   <div class="categorybar">
     <ul class="category-lists">
           <li class="list">実話</li>
@@ -11,6 +13,7 @@
           <li class="list">恋愛</li>
     </ul>
   </div>
+  
   <div class="contents">
     <div class="content">
       <div class="content-sub">
@@ -26,4 +29,6 @@
     <div class="content"># ここにランダムにストーリーを配置予定</div>
     <div class="content"># ここにランダムにストーリーを配置予定</div>
   </div>
+
 </div><!--固定 メイン領域(終了)-->
+ <%= render "shared/footer" %>  <!-- フッターを呼び出す -->

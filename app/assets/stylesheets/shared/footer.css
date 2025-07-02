@@ -1,0 +1,21 @@
+/* フッター */
+footer {
+  background-color: blue;
+  height: 100px;
+  color: white;
+  padding: 10px 50px 20px 50px;
+}
+
+.footer-items {
+  height: 70px;
+  color: white;
+}
+
+.information {
+  list-style: none;
+  text-align: center;
+}
+
+.copylight {
+  text-align: center;
+}
