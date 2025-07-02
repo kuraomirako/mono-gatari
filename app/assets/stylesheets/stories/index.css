@@ -1,13 +1,11 @@
 .index-main {
   background-color: #6c9a6e;
-  min-height: calc(100vh - 70px - 100px); /* 画面高 - ヘッダー - フッター */
 }
 
 /* カテゴリーバー */
 .categorybar {
   background: yellow;
-  height: 45px;
-  padding: 10px 20px;
+  padding: 5px 20px;
 }
 
 .category-lists {

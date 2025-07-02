@@ -1,11 +1,10 @@
 /* ヘッダー */
 header {
   background-color: blue;
-  height: 70px;
-  color: white;
+  width: 100vw;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
 }
 
 .heading-left {
