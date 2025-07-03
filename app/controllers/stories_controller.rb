@@ -4,7 +4,9 @@ class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
 
   def index
-    @stories = Story.order(created_at: :desc).limit(5)
+    @latest_stories = Story.order(created_at: :desc).limit(5)
+    @categories = Category.all
+    @genres = Genre.all
   end
 
   def new

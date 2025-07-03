@@ -60,7 +60,7 @@
                 <div class="comment-delete">
                   <span class="toggle-comment-delete">▽</span>
                   <ul class=comment-action-list style="display: none;">
-                    <li><%= link_to '削除', story_comment_path(comment.id), data: {turbo_method: :delete}, class:"comment-destroy" %></li>
+                    <li><%= link_to '削除', story_comment_path(@story, comment), data: {turbo_method: :delete}, class:"comment-destroy" %></li>
                   </ul>
                 </div>
                 <% end %>

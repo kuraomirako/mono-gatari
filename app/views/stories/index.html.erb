@@ -1,21 +1,23 @@
 <%= render "shared/header" %>  <!-- ヘッダーを呼び出す -->
 <div class="index-main"><!--固定 メイン領域(開始)-->
 
-  <div class="categorybar">
-    <ul class="category-lists">
-          <li class="category-list">実話</li>
-          <li class="category-list">創作</li>
-          <li class="category-list">日常</li>
-          <li class="category-list">人間関係</li>
-          <li class="category-list">仕事勉強</li>
-          <li class="category-list">ファンタジー</li>
-          <li class="category-list">SF</li>
-          <li class="category-list">恋愛</li>
+  <div class="group-bar">
+    <ul class="group-lists">
+      <% @categories.each do |category| %>
+        <li class="category-list">
+          <%= link_to category.name, category_path(category.id), class: "category-link" %>
+        </li>
+      <% end %>
+      <% @genres.each do |genre| %>
+        <li class="genre-list">
+          <%= link_to genre.name, genre_path(genre.id), class: "genre-link" %>
+        </li>
+      <% end %>
     </ul>
   </div>
 
   <div class="index-contents">
-    <% @stories.each do |story| %>
+    <% @latest_stories.each do |story| %>
     <div class="one-content">
       <div class="index-story-item">
         <div class="index-story-item1">
@@ -28,7 +30,9 @@
         </div>
       </div>
       <div class="index-story-main">
-        <div class="story-title"><%= story.title %></div>
+        <div class="story-title">
+          <%= link_to story.title, story_path(story), class: "story-title-link" %>
+        </div>
         <div class="story-main-text"><%= truncate(story.body, length: 100) %></div>
       </div>
     </div>

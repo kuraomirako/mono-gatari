@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   resources :stories do
     resources :comments, only: [:create, :destroy]
   end
+
+  resources :categories, only: [:show]
+  resources :genres, only: [:show]
 end
