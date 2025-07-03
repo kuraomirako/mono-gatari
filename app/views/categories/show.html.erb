@@ -1,16 +1,16 @@
 <%= render "shared/header" %>  <!-- ヘッダーを呼び出す -->
-<div class="index-main"><!--固定 メイン領域(開始)-->
+<div class="group-bar-main"><!--固定 メイン領域(開始)-->
 
   <div class="group-bar">
     <ul class="group-lists">
       <% @categories.each do |category| %>
-         <% next if category.id == 1 %>
+        <% next if category.id == 1 %>
         <li class="category-list">
           <%= link_to category.name, category_path(category.id), class: "category-link" %>
         </li>
       <% end %>
       <% @genres.each do |genre| %>
-         <% next if genre.id == 1 %>
+        <% next if genre.id == 1 %>
         <li class="genre-list">
           <%= link_to genre.name, genre_path(genre.id), class: "genre-link" %>
         </li>
@@ -18,8 +18,8 @@
     </ul>
   </div>
 
-  <div class="index-contents">
-    <% @latest_stories.each do |story| %>
+  <div class="group-index-contents">
+    <% @stories.each do |story| %>
     <div class="one-content">
       <div class="index-story-item">
         <div class="index-story-item1">
