@@ -1,6 +1,6 @@
 /* メイン */
 .user-show-main {
-  background: linear-gradient(to bottom, #316745, #92b5a9);
+  background: linear-gradient(to bottom, #17184b, #274a78);
 }
 
 .main-contents {
@@ -26,6 +26,15 @@
   padding: 10px;
   border: 3px solid gray;
   border-radius: 10px;
+}
+
+.user-info {
+  display: flex;
+}
+
+.follow-area {
+  display: flex;
+  border-bottom: 1px solid gray;
 }
 
 

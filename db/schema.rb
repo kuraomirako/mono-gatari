@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_07_03_073717) do
+ActiveRecord::Schema[7.1].define(version: 2025_07_04_020025) do
   create_table "comments", charset: "utf8mb3", force: :cascade do |t|
     t.text "comment_box", null: false
     t.bigint "user_id", null: false
@@ -19,6 +19,16 @@ ActiveRecord::Schema[7.1].define(version: 2025_07_03_073717) do
     t.datetime "updated_at", null: false
     t.index ["story_id"], name: "index_comments_on_story_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "relationships", charset: "utf8mb3", force: :cascade do |t|
+    t.integer "follower_id", null: false
+    t.integer "followed_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
   create_table "stories", charset: "utf8mb3", force: :cascade do |t|

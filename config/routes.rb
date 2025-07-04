@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   resources :categories, only: [:show]
   resources :genres, only: [:show]
+  resources :relationships, only: [:create, :destroy]
 end
