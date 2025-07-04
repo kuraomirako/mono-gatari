@@ -1,0 +1,26 @@
+/* メイン */
+.user-edit-main {
+  background: linear-gradient(to bottom, #316745, #92b5a9);
+}
+
+.edit-main-contents {
+  display: flex;
+}
+
+.provisional {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+.my-page-right-contents {
+  width: calc(100% - 200px);
+  margin-right: 120px;
+}
+
+.profile-input-area {
+  min-height: 700px;
+}
+
+.edit-main-contents {
+  padding-top: 15px;
+}

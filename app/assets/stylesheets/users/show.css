@@ -1,0 +1,43 @@
+/* メイン */
+.user-show-main {
+  background: linear-gradient(to bottom, #316745, #92b5a9);
+}
+
+.main-contents {
+  display: flex;
+}
+
+/* サイドバー */
+.my-page-sidebar {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+/* 右側のコンテンツ箱 */
+.my-page-right-contents {
+  width: calc(100% - 200px);
+  margin-right: 120px;
+}
+
+/* プロフィール */
+.profile-content {
+  height: 300px;
+  margin-top: 20px;
+  padding: 10px;
+  border: 3px solid gray;
+  border-radius: 10px;
+}
+
+
+/* そのユーザーが投稿したストーリー一覧 */
+.user-index-contents {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.my-one-content {
+  margin-bottom: 20px;
+  color: gray;
+  border: solid 1px gray;
+  border-radius: 10px;
+}

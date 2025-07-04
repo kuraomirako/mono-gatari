@@ -1,0 +1,46 @@
+<%= render "shared/header" %>  <!-- ヘッダーを呼び出す -->
+<div class="user-show-main">
+
+  <div class="main-contents">
+
+    <div class="my-page-sidebar"><!-- サイドバー -->
+      <div>フォロワー</div>
+      <div>お気に入り</div>
+      <div>積読</div>
+      <div><%= link_to 'トップページへ戻る', root_path, class: "return-top-page" %></div>
+    </div>
+
+    <div class="my-page-right-contents">
+      <div class="profile-content"><!-- 自己紹介 -->
+        <div class="my-page-contributor-icon">🟢</div><!-- アイコン入れる -->
+        <div class="my-page-contributor-name"><%= @user.nickname %> さん</div>
+        <div class="profile-sentence">自己紹介文</div>
+      </div>
+
+      <div class="user-index-contents"><!-- そのユーザーが投稿したストーリー一覧 -->
+        <% @latest_stories.each do |story| %>
+        <div class="my-one-content">
+          <div class="index-story-item">
+            <div class="index-story-item1">
+              <div class="index-category-tag"><%= story.category.name %></div>
+              <div class="index-genre-tag"><%= story.genre.name %></div>
+            </div>
+            <div class="index-story-item2">
+              <div class="index-character-count"> <%= "#{story.body.length}文字" %></div>
+              <div class="index-post-date"><%= story.created_at.strftime("%Y.%m.%d") %></div>
+            </div>
+          </div>
+          <div class="index-story-main">
+            <div class="story-title">
+              <%= link_to story.title, story_path(story), class: "story-title-link" %>
+            </div>
+            <div class="story-main-text"><%= truncate(story.body, length: 100) %></div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
+<%= render "shared/footer" %>  <!-- フッターを呼び出す -->

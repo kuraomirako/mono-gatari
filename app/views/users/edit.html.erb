@@ -1,0 +1,40 @@
+<%= render "shared/header" %>  <!-- ヘッダーを呼び出す -->
+<div class="user-edit-main">
+
+  <div class="edit-main-contents">
+
+    <div class="provisional">
+      <div><%= link_to 'トップページへ戻る', root_path, class: "return-top-page" %></div>
+    </div>
+
+    <div class="profile-input-area">
+      <%= form_with model: @user, local: true do |f| %>
+        <div class="profile-edit-title">プロフィール編集</div>
+        <div class="profile-input">
+          <label>
+            <span class="profile-label-name">ニックネーム</span>
+            <p><%= f.text_field :nickname, class:"edit-f-input-nickname" %></p>
+          </label>
+        </div>
+        <div class="profile-input">
+          <label>
+            <span class="profile-label-name">プロフィール</span>
+            <p><%= f.text_area :profile, class:"edit-f-input-sentence" %></p>
+          </label>
+        </div>
+        <div class="profile-input">
+          <label>
+            <span class="profile-label-name">アイコン</span>
+            <p><%= f.file_field :icon, class:"edit-f-input-icon" %></p>
+          </label>
+        </div>
+        <div class="update-confirm-area">
+          <%= f.submit '更新する', name: "update-profile", class: "update-btn"%>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>
+<%= render "shared/footer" %>  <!-- フッターを呼び出す -->

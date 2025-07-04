@@ -1,5 +1,5 @@
 /* メイン */
-.index-main {
+.group-index-main {
   background: linear-gradient(to bottom, #17184b, #274a78);
 }
 
@@ -21,7 +21,7 @@
 }
 
 /* ストーリー配置 */
-.index-contents {
+.group-index-contents {
   margin-top: 50px;
   padding-bottom: 100px;
   margin-left: 200px;
