@@ -91,6 +91,25 @@
   font-size: 13px;
 }
 
+
+/* リアクション欄 */
+.reaction-content {
+  background-color: aqua;
+}
+
+.reaction-lists {
+  background-color: aquamarine;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.reaction.active {
+  color: yellow;
+  font-weight: bold;
+}
+
+
 /* コメント欄 */
 .all-comments {
   margin-top: 10px;

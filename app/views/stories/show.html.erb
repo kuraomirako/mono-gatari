@@ -7,14 +7,6 @@
       <div class="contributor-icon">🟢</div><!-- アイコン入れる -->
       <div class="contributor-name"><%= @story.user.nickname %>さんの投稿</div>
       <%= link_to 'トップページへ戻る', root_path, class: "return-top-page" %>
-      <div class="reaction-content">
-        <ul class="reaction-lists">リアクション
-          <li class="riaction">涙</li>
-          <li class="riaction">驚</li>
-          <li class="riaction">笑</li>
-          <li class="riaction">手</li>
-        </ul>
-      </div>
     </div>
 
     <div class="show-right-contents">
@@ -43,6 +35,17 @@
           <div class="show-story-title"><%= @story.title %></div>
           <div class="show-story-text"><%= @story.body %></div>
         </div>
+      </div>
+
+      <div class="reaction-content"><!-- リアクション欄 -->
+        <ul class="reaction-lists" data-story-id="<%= @story.id %>">
+          <% reacted_kind = @story.reactions.find_by(user_id: current_user&.id)&.kind %>
+          <% %w(涙 驚 笑 手).each do |kind| %>
+            <li class="reaction <%= 'active' if kind == reacted_kind %>" data-kind="<%= kind %>">
+              （<%= kind %>）
+            </li>
+          <% end %>
+</ul>
       </div>
 
       <div class="comment-content"><!-- コメント欄 -->

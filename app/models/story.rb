@@ -5,6 +5,7 @@ class Story < ApplicationRecord
   belongs_to :category
   belongs_to :genre
   has_many :comments
+  has_many :reactions, dependent: :destroy
 
   validates :title, :body, presence: true
   validates :body, length: { minimum: 300, message: "は300文字以上入力してください" }

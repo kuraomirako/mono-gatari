@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_07_04_020025) do
+ActiveRecord::Schema[7.1].define(version: 2025_07_04_050930) do
   create_table "comments", charset: "utf8mb3", force: :cascade do |t|
     t.text "comment_box", null: false
     t.bigint "user_id", null: false
@@ -19,6 +19,17 @@ ActiveRecord::Schema[7.1].define(version: 2025_07_04_020025) do
     t.datetime "updated_at", null: false
     t.index ["story_id"], name: "index_comments_on_story_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "reactions", charset: "utf8mb3", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "story_id", null: false
+    t.string "kind", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["story_id"], name: "index_reactions_on_story_id"
+    t.index ["user_id", "story_id", "kind"], name: "index_reactions_on_user_id_and_story_id_and_kind", unique: true
+    t.index ["user_id"], name: "index_reactions_on_user_id"
   end
 
   create_table "relationships", charset: "utf8mb3", force: :cascade do |t|
@@ -63,5 +74,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_07_04_020025) do
 
   add_foreign_key "comments", "stories"
   add_foreign_key "comments", "users"
+  add_foreign_key "reactions", "stories"
+  add_foreign_key "reactions", "users"
   add_foreign_key "stories", "users"
 end
