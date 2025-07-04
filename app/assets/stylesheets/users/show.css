@@ -37,6 +37,14 @@
   border-bottom: 1px solid gray;
 }
 
+.follow-btn {
+  margin: 10px;
+  padding: 3px 10px;
+  background-color: aqua;
+  color: gray;
+  border-radius: 30px;
+  border-style: none;
+}
 
 /* そのユーザーが投稿したストーリー一覧 */
 .user-index-contents {
