@@ -29,11 +29,17 @@
     </div>
   </div>
 
-  <div class="confirm-area"><!--確認エリア-->
-    <%= f.submit "投稿する", name: "post", class: "post-btn" %>
-    <!--  linkto '投稿確認画面', "#", class: "post-confirm-btn" 　後でcomfirmアクションとビューを作成する　-->
-    <!--  f.submit "下書き保存", name: "draft", class: "draft-confirm-btn"  　後でdraft機能を実装する　-->
-    <%= link_to 'この内容を破棄', root_path, class: "delete-confirm-btn" %>
+  <div class="new-confirm-area"><!--確認エリア-->
+    <div class="post-draft">
+      <%= form_with model: @story do |f| %>
+        <%= f.hidden_field :status, value: "published" %>
+        <%= f.submit "投稿する", class: "post-btn" %>
+      <% end %>
+      <%= form_with model: @story do |f| %>
+        <%= f.hidden_field :status, value: "draft" %>
+        <%= f.submit "下書き保存", class: "draft-btn" %>
+      <% end %>
+    </div>
   </div>
   <% end %>
 

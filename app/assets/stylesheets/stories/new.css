@@ -79,9 +79,12 @@
 }
 
 /* 確認エリア */
-.confirm-area {
+.new-confirm-area {
   margin-bottom: 50px;
   padding: 5px;
+}
+
+.post-draft {
   display: flex;
   justify-content: center;
 }
@@ -95,12 +98,11 @@
   border: 1px solid gray;
 }
 
-.delete-confirm-btn {
+.draft-btn {
   width: 150px;
-  font-size: 15px;
   padding: 5px;
-  padding-top: 8px;
+  margin-right: 50px;
+  font-size: 20px;
   border-radius: 10px;
-  border: solid 1px gray;
-  text-align: center;
+  border: 1px solid gray;
 }

@@ -7,6 +7,7 @@ class StoriesController < ApplicationController
     @latest_stories = Story.order(created_at: :desc).limit(5)
     @categories = Category.all
     @genres = Genre.all
+    @stories = Story.where(status: 'published')
   end
 
   def new
@@ -14,15 +15,19 @@ class StoriesController < ApplicationController
   end
 
   def create
-    @story = Story.new(story_params)
+    @story = current_user.stories.new(story_params)
+    @story.status = params[:status] || 'published'
     if @story.save
-      redirect_to root_path
+      redirect_to @story, notice: @story.draft? ? "下書きを保存しました" : "投稿が完了しました"
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def show
+    if @story.draft? && @story.user != current_user
+      redirect_to root_path
+    end
     @comments = @story.comments.includes(:user)
   end
 
@@ -44,7 +49,7 @@ class StoriesController < ApplicationController
 
   private
   def story_params
-    params.require(:story).permit(:category_id, :genre_id, :title, :body).merge(user_id: current_user.id)
+    params.require(:story).permit(:category_id, :genre_id, :title, :body, :status)
   end
 
   def set_select_values

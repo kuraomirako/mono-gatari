@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_07_04_050930) do
+ActiveRecord::Schema[7.1].define(version: 2025_07_04_065307) do
   create_table "comments", charset: "utf8mb3", force: :cascade do |t|
     t.text "comment_box", null: false
     t.bigint "user_id", null: false
@@ -51,6 +51,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_07_04_050930) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status", default: "published", null: false
     t.index ["user_id"], name: "index_stories_on_user_id"
   end
 

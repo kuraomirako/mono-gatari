@@ -1,5 +1,8 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const storyId = document.querySelector(".reaction-lists").dataset.storyId;
+const initReactions = () => {
+  console.log("reactions.js 初期化されました！");
+  const storyList = document.querySelector(".reaction-lists");
+  if (!storyList) return; // 詳細ページ以外では処理しない
+  const storyId = storyList.dataset.storyId;
 
   document.querySelectorAll(".reaction").forEach(el => {
     el.addEventListener("click", () => {
@@ -18,4 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
-});
+};
+
+document.addEventListener("turbo:load", initReactions);
+document.addEventListener("DOMContentLoaded", initReactions);

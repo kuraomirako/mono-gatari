@@ -7,9 +7,12 @@ class Story < ApplicationRecord
   has_many :comments
   has_many :reactions, dependent: :destroy
 
+  attribute :status, :string
+  enum status: { draft: 'draft', published: 'published' }
+
   validates :title, :body, presence: true
   validates :body, length: { minimum: 300, message: "は300文字以上入力してください" }
 
-  validates :category_id, :genre_id, numericality: { other_than: 1, message: "can't be blank"}
+  validates :category_id, :genre_id, numericality: { other_than: 1, message: "を選択してください"}
 
 end
