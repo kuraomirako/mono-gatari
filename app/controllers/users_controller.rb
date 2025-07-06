@@ -19,6 +19,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def bookmarks
+    @user = User.find(params[:id])
+    @bookmarked_stories = @user.bookmarked_stories
+  end
+
 
   private
   def user_params

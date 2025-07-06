@@ -10,6 +10,12 @@
           <%= link_to 'log⊹∘˙<br>⊹∘˙in'.html_safe, new_user_session_path, class: "log-situation1" %>
           <%= link_to ' 会員 <br> 登録 '.html_safe, new_user_registration_path, class: "log-situation0" %>
         <% end %>
-        <%= link_to '≡', "#", class: "menu-icon" %><!-- メニューアイコン入れる -->
+        <div class="header-menu">
+          <span class="menu-icon">≡</span>
+          <ul class="menu-icon" style="display: none;">
+            <li><%= link_to '積読一覧', bookmarks_user_path(current_user) %></li>
+          </ul>
+        </div>
+        
       </div>
     </header>

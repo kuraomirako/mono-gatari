@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_07_05_053434) do
+ActiveRecord::Schema[7.1].define(version: 2025_07_05_071835) do
+  create_table "bookmarks", charset: "utf8mb3", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "story_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["story_id"], name: "index_bookmarks_on_story_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
+
   create_table "comments", charset: "utf8mb3", force: :cascade do |t|
     t.text "comment_box", null: false
     t.bigint "user_id", null: false
@@ -72,6 +81,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_07_05_053434) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookmarks", "stories"
+  add_foreign_key "bookmarks", "users"
   add_foreign_key "comments", "stories"
   add_foreign_key "comments", "users"
   add_foreign_key "reactions", "stories"

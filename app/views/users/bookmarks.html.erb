@@ -1,0 +1,29 @@
+<%= render "shared/header" %>  <!-- ヘッダーを呼び出す -->
+<div class="bookmark-main">
+
+  <div class="bm-index-contents"><!-- ストーリー配置 -->
+    <div class="bookmark-title">積読一覧</div>
+    <% @bookmarked_stories.each do |story| %>
+    <div class="one-content">
+      <div class="index-story-item">
+        <div class="index-story-item1">
+          <div class="index-category-tag"><%= story.category.name %></div>
+          <div class="index-genre-tag"><%= story.genre.name %></div>
+        </div>
+        <div class="index-story-item2">
+          <div class="index-character-count"> <%= "#{story.body.length}文字" %></div>
+          <div class="index-post-date"><%= story.created_at.strftime("%Y.%m.%d") %></div>
+        </div>
+      </div>
+      <div class="index-story-main">
+        <div class="story-title">
+          <%= link_to story.title, story_path(story), class: "story-title-link" %>
+        </div>
+        <div class="story-main-text"><%= truncate(story.body, length: 100) %></div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+</div>
+<%= render "shared/footer" %>  <!-- フッターを呼び出す -->

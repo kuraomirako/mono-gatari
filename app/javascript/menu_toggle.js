@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbo:load', () => {
   // ▽ 詳細ページの編集・削除メニュー
   const toggleDetail = document.querySelector('.toggle-detail');
   const detailList = document.querySelector('.detail_list');

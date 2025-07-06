@@ -62,6 +62,46 @@
   margin-right: 5px;
 }
 
+.detail {
+  position: relative;
+}
+
+.detail_list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: max-content;
+  white-space: nowrap;
+  display: none;
+  background: #c1e4e9;
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  z-index: 10;
+}
+
+
+.fun-content {
+  display: flex;;
+}
+
+/* リアクション欄 */
+.reaction-lists {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.reaction.active {
+  color: yellow;
+  font-weight: bold;
+}
+
+.bookmark-content {
+  background-color: aqua;
+  width: 50%;
+}
+
+
 /* コメント送信欄 */
 .comment-content {
   background-color: plum;
@@ -91,25 +131,6 @@
   font-size: 13px;
 }
 
-
-/* リアクション欄 */
-.reaction-content {
-  background-color: aqua;
-}
-
-.reaction-lists {
-  background-color: aquamarine;
-  width: 50%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.reaction.active {
-  color: yellow;
-  font-weight: bold;
-}
-
-
 /* コメント欄 */
 .all-comments {
   margin-top: 10px;
@@ -124,4 +145,21 @@
 
 .one-comment-info {
   display: flex;
+}
+
+.comment-delete {
+  position: relative;
+}
+
+.comment-action-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: max-content;
+  white-space: nowrap;
+  display: none;
+  background: #c1e4e9;
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  z-index: 10;
 }
