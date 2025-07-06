@@ -1,3 +1,4 @@
+
 /* メイン */
 .show-main {
   background: linear-gradient(to bottom, #17184b, #274a78);
@@ -42,11 +43,18 @@
   display: flex;
 }
 
-/* タイトル、本文 */
+.show-character-count {
+  margin: 5px;
+}
+
 .show-story-main {
   min-height: 700px;
   padding: 10px;
   overflow-y: auto;
+}
+
+.show-post-date {
+  margin: 5px;
 }
 
 .show-story-title {
@@ -60,6 +68,7 @@
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 5px;
+  white-space: pre-wrap;
 }
 
 .detail {
@@ -80,8 +89,8 @@
 }
 
 
-.fun-content {
-  display: flex;;
+.reaction-content {
+  display: flex;
 }
 
 /* リアクション欄 */

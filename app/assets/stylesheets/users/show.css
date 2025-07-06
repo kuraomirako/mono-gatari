@@ -7,12 +7,6 @@
   display: flex;
 }
 
-/* サイドバー */
-.my-page-sidebar {
-  width: 200px;
-  flex-shrink: 0;
-}
-
 /* 右側のコンテンツ箱 */
 .my-page-right-contents {
   width: calc(100% - 200px);

@@ -1,0 +1,75 @@
+/********************************************
+　共通
+********************************************/
+/* 一覧表示の投稿日時 */
+.index-post-date {
+  margin: 5px;
+}
+
+/* サイドバー */
+.sidebar {
+  width: 200px;
+  flex-shrink: 0;
+}
+
+/********************************************
+　トップページ
+********************************************/
+/* カテゴリータグ */
+.index-category-tag {
+  background-color: #f2f2b0;
+  padding: 0 5px;
+  padding-top: 3px;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px,8px;
+  font-size: 13px;
+}
+
+/* ジャンルタグ */
+.index-genre-tag {
+  background-color: #f8e58c;
+  padding: 0 5px;
+  padding-top: 3px;
+  border-radius: 5px;
+  margin: 5px 5px 5px 2px;
+  padding: 5px,8px;
+  font-size: 13px;
+}
+
+/* 文字数 */
+.index-character-count {
+  margin: 5px;
+}
+
+/********************************************
+　詳細ページ
+********************************************/
+/* カテゴリータグ */
+.show-category-tag {
+  background-color: #f2f2b0;
+  padding: 5px 10px;
+  padding-top: 5px;
+  border-radius: 5px;
+  margin: 5px;
+  font-size: 13px;
+}
+
+/* ジャンルタグ */
+.show-genre-tag {
+  background-color: #f8e58c;
+  padding: 5px 10px;
+  padding-top: 5px;
+  border-radius: 5px;
+  margin: 5px;
+  font-size: 13px;
+}
+
+/********************************************
+　投稿ページ
+********************************************/
+
+.detail {
+  margin: 5px;
+  margin-right: 10px;
+}

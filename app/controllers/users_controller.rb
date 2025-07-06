@@ -4,8 +4,8 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
 
   def show
+    @user = User.find(params[:id])
     @stories = @user.stories.order(created_at: :desc)
-    @latest_stories = Story.order(created_at: :desc).limit(5)
   end
 
   def edit
