@@ -1,29 +1,23 @@
-
 /* メイン */
 .show-main {
   background: linear-gradient(to bottom, #17184b, #274a78);
 }
 
-.main-contents {
-  display: flex;
-}
-
-/* サイドバー */
-.sidebar {
-  width: 200px;
-  flex-shrink: 0;
+.show-main-contents {
+  width: calc(100% - 200px);
+  padding-top: 50px;
+  margin-left: 120px;
+  margin-right: 120px;
+  padding-bottom: 100px;
 }
 
 /* ストーリー配置 */
-.show-right-contents {
-  width: calc(100% - 200px);
-  margin-right: 120px;
-}
-
 .show-story-content {
   margin-top: 30px;
+  margin-bottom: 20px;
   border: 1px solid gray;
   border-radius: 10px;
+  color: #eaf4fc;
 }
 
 /* ストーリーアイテム */
@@ -57,6 +51,13 @@
   margin: 5px;
 }
 
+.detail {
+  margin: 5px;
+  margin-left: 10px;
+}
+
+
+/* タイトル本文 */
 .show-story-title {
   margin-left: 10px;
   margin-right: 5px;
@@ -78,7 +79,7 @@
 .detail_list {
   position: absolute;
   top: 100%;
-  left: 0;
+  right: 0;
   width: max-content;
   white-space: nowrap;
   display: none;
@@ -89,7 +90,7 @@
 }
 
 
-.reaction-content {
+.action-contents {
   display: flex;
 }
 
@@ -98,22 +99,38 @@
   width: 50%;
   display: flex;
   justify-content: space-around;
+  color: #eaf4fc;
+}
+
+.one-reaction {
+  padding: 5px;
+  text-shadow: 3px 3px 20px #f2f2b0;
 }
 
 .reaction.active {
-  color: yellow;
-  font-weight: bold;
+  color: #fef263;
 }
 
+/* 積読欄 */
 .bookmark-content {
-  background-color: aqua;
+  margin-right: 20px;
   width: 50%;
+  display: flex;
+  justify-content: right;
+}
+
+.save-bookmark {
+  border-style: none;
+  border-radius: 30px;
+  padding: 10px;
+  box-shadow: 1px 1px 2px black;
 }
 
 
 /* コメント送信欄 */
 .comment-content {
-  background-color: plum;
+  background-color: #eaf4fc;
+  border-radius: 10px;
   min-height: 200px;
   margin-top: 10px;
   margin-bottom: 50px;
@@ -143,6 +160,7 @@
 /* コメント欄 */
 .all-comments {
   margin-top: 10px;
+  color: gray;
 }
 
 .one-comment {
@@ -163,7 +181,7 @@
 .comment-action-list {
   position: absolute;
   top: 100%;
-  left: 0;
+  right: 0;
   width: max-content;
   white-space: nowrap;
   display: none;

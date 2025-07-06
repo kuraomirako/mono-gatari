@@ -1,23 +1,64 @@
 /********************************************
-　共通
+　トップページ、カテゴリージャンル毎の一覧ページ
 ********************************************/
-/* 一覧表示の投稿日時 */
-.index-post-date {
-  margin: 5px;
+
+/* グループバー */
+.group-bar {
+  background: #274a78;
+  padding: 5px 20px;
 }
 
-/* サイドバー */
-.sidebar {
-  width: 200px;
-  flex-shrink: 0;
+.group-lists {
+  display: flex;
+  justify-content: space-around;
 }
 
-/********************************************
-　トップページ
-********************************************/
+.category-link, .genre-link {
+  color: #eaf4fc;
+  font-size: 20px;
+  list-style: none;
+}
+
+/* メインコンテンツ */
+.index-main-contents {
+  min-height: 700px;
+  margin-top: 50px;
+  margin-left: 120px;
+  margin-right: 120px;
+  padding-bottom: 100px;
+}
+
+.new-arrival {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #c0c6c9;
+}
+
+/* 1つの新着ストーリー */
+.one-content {
+  border: solid 1px gray;
+  border-radius: 10px;
+  color: #c0c6c9;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+/* ストーリーアイテム */
+.index-story-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* タグ箱：カテゴリー、ジャンル */
+.index-story-item1 {
+  display: flex;
+}
+
 /* カテゴリータグ */
 .index-category-tag {
   background-color: #f2f2b0;
+  color: #17184b;
   padding: 0 5px;
   padding-top: 3px;
   border-radius: 5px;
@@ -29,6 +70,7 @@
 /* ジャンルタグ */
 .index-genre-tag {
   background-color: #f8e58c;
+  color: #17184b;
   padding: 0 5px;
   padding-top: 3px;
   border-radius: 5px;
@@ -37,10 +79,31 @@
   font-size: 13px;
 }
 
-/* 文字数 */
+/* その他情報箱：文字数、日付 */
+.index-story-item2 {
+  display: flex;
+}
+
 .index-character-count {
   margin: 5px;
 }
+
+.index-post-date {
+  margin: 5px;
+}
+
+/* タイトル、本文 */
+.index-story-main {
+  color: #eaf4fc;
+  padding-top: 5px;
+}
+
+.story-title-link {
+  font-size: 20px;
+  border-bottom: 1px solid #eaf4fc;
+  color: #eaf4fc;
+}
+
 
 /********************************************
 　詳細ページ
@@ -48,6 +111,7 @@
 /* カテゴリータグ */
 .show-category-tag {
   background-color: #f2f2b0;
+  color: #17184b;
   padding: 5px 10px;
   padding-top: 5px;
   border-radius: 5px;
@@ -58,18 +122,10 @@
 /* ジャンルタグ */
 .show-genre-tag {
   background-color: #f8e58c;
+  color: #17184b;
   padding: 5px 10px;
   padding-top: 5px;
   border-radius: 5px;
   margin: 5px;
   font-size: 13px;
-}
-
-/********************************************
-　投稿ページ
-********************************************/
-
-.detail {
-  margin: 5px;
-  margin-right: 10px;
 }

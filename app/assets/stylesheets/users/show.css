@@ -8,7 +8,7 @@
 }
 
 /* 右側のコンテンツ箱 */
-.my-page-right-contents {
+.right-contents {
   width: calc(100% - 200px);
   margin-right: 120px;
 }

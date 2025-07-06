@@ -1,25 +1,26 @@
 <header>
-      <div class="heading-left"><!--ヘッダー-->
-        <%= link_to '者 -モノ- 語り', root_path, class: "title-logo" %>
-      </div>
-      <div class="heading-right">
-        <% if user_signed_in? %>
-          <%= link_to truncate(current_user.nickname, length: 5), user_path(current_user), class: "user-my-page" %>
-          <%= link_to 'log<br>out'.html_safe, destroy_user_session_path, data: {turbo_method: :delete}, class: "log-situation2" %>
-          <%= link_to '投 稿<br>す る'.html_safe, new_story_path, class: "new-post" %>
-        <% else %>
-          <%= link_to 'log<br>in'.html_safe, new_user_session_path, class: "log-situation1" %>
-          <%= link_to ' 会員 <br> 登録 '.html_safe, new_user_registration_path, class: "log-situation0" %>
+  <div class="heading-left"><!--ヘッダー-->
+    <%= link_to '者 -モノ- 語り', root_path, class: "title-logo" %>
+  </div>
+  <div class="heading-right">
+    <% if user_signed_in? %>
+    <div class="greeting">おかえり、
+      <p>　<%= link_to truncate(current_user.nickname, length: 5), user_path(current_user), class: "user-my-page" %></p>
+    </div>
+      <%= link_to 'log<br>out'.html_safe, destroy_user_session_path, data: {turbo_method: :delete}, class: "log-situation2" %>
+      <%= link_to '投 稿<br>す る'.html_safe, new_story_path, class: "new-post" %>
+    <% else %>
+      <%= link_to 'log<br>in'.html_safe, new_user_session_path, class: "log-situation1" %>
+      <%= link_to ' 会員 <br> 登録 '.html_safe, new_user_registration_path, class: "log-situation0" %>
+    <% end %>
+    <div class="header-menu">
+      <span class="menu-icon">≡</span>
+      <ul class="menu-lists" style="display: none;">
+        <li class="menu-list"><%= link_to '積読一覧', bookmarks_user_path(current_user) %></li>
+        <% unless current_page?(root_path) %>
+          <li><%= link_to 'トップページへ戻る', root_path, class: "return-top-page" %></li>
         <% end %>
-        <div class="header-menu">
-          <span class="menu-icon">≡</span>
-          <ul class="menu-lists" style="display: none;">
-            <li class="menu-list"><%= link_to '積読一覧', bookmarks_user_path(current_user) %></li>
-            <% unless current_page?(root_path) %>
-              <li><%= link_to 'トップページへ戻る', root_path, class: "return-top-page" %></li>
-            <% end %>
-          </ul>
-        </div>
-        
-      </div>
-    </header>
+      </ul>
+    </div>
+  </div>
+</header>

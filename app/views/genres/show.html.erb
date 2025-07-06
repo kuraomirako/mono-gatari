@@ -1,5 +1,5 @@
 <%= render "shared/header" %>  <!-- ヘッダーを呼び出す -->
-<div class="group-index-main">
+<div class="group-main">
 
   <div class="group-bar">
     <ul class="group-lists">
@@ -18,7 +18,8 @@
     </ul>
   </div>
 
-  <div class="group-index-contents">
+  <div class="index-main-contents">
+    <div class="group-title">📜<%= @genre.name %>一覧</div>
     <% @stories.each do |story| %>
     <div class="one-content">
       <div class="index-story-item">

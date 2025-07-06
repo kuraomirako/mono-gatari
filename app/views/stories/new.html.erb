@@ -1,15 +1,17 @@
-<%= render "shared/header" %>  <!-- ヘッダーを呼び出す -->
-<div class="new-main"><!--固定 メイン領域(開始)-->
+<%= render "shared/header" %>
+<div class="new-main">
 
   <%= form_with model: @story, local: true, data: { turbo: false } do |f| %>
-  <div class="choice-area"><!--カテゴリージャンル選択・文字数エリア-->
-    <div class="category-choice">
-      <span class="pulldown-title">カテゴリー選択：</span>
-      <%= f.collection_select(:category_id, @categories, :id, :name, {}, {class:"select-box", id:"story-category"}) %>
-    </div>
-    <div class="genre-choice">
-      <span class="pulldown-title">ジャンル選択：</span>
-      <%= f.collection_select(:genre_id, @genres, :id, :name, {}, {class:"select-box", id:"story-genre"}) %>
+  <div class="top-area"><!--カテゴリージャンル選択・文字数エリア-->
+    <div class="choice-area">
+      <div class="category-choice">
+        <span class="pulldown-title">カテゴリー選択：</span>
+        <%= f.collection_select(:category_id, @categories, :id, :name, {}, {class:"select-box", id:"story-category"}) %>
+      </div>
+      <div class="genre-choice">
+        <span class="pulldown-title">ジャンル選択：</span>
+        <%= f.collection_select(:genre_id, @genres, :id, :name, {}, {class:"select-box", id:"story-genre"}) %>
+      </div>
     </div>
     <div class="count-now" id="char-count">0文字</div>
   </div>
@@ -37,5 +39,5 @@
   <% end %>
 
 
-</div><!--固定 メイン領域(終了)-->
-<%= render "shared/footer" %>  <!-- フッターを呼び出す -->
+</div>
+<%= render "shared/footer" %>

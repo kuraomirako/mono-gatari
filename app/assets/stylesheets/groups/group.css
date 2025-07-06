@@ -1,10 +1,10 @@
 /* メイン */
-.index-main {
-  background: linear-gradient(to bottom, #17184b, #274a78);
+.group-main {
+  background: linear-gradient(to bottom, #274a78, #a0d8ef);
 }
 
 /* 表示タイトル */
-.new-arrival {
+.group-title {
   font-size: 30px;
   font-weight: 600;
   margin-bottom: 10px;

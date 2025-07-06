@@ -18,8 +18,10 @@
     </ul>
   </div>
 
-  <div class="index-contents">
-    <% @latest_stories.each do |story| %>
+  <div class="index-main-contents">
+    <div class="new-arrival">《 新着物語 》</div>
+
+    <% @latest_stories.each do |story| %><!-- 1つの新着ストーリー -->
     <div class="one-content">
       <div class="index-story-item">
         <div class="index-story-item1">
@@ -32,13 +34,12 @@
         </div>
       </div>
       <div class="index-story-main">
-        <div class="story-title">
-          <%= link_to story.title, story_path(story), class: "story-title-link" %>
-        </div>
+        <div class="story-title"><%= link_to story.title, story_path(story), class: "story-title-link" %></div>
         <div class="story-main-text"><%= truncate(story.body, length: 100) %></div>
       </div>
     </div>
     <% end %>
+
   </div>
 
 </div>

@@ -27,6 +27,18 @@ header {
   align-items: center;
 }
 
+/* ユーザー名 */
+.greeting {
+  color: gray;
+  font-size: 13px;
+}
+
+.user-my-page {
+  color: #165e83;
+  border-bottom: 1px solid gray;
+  font-size: 20px;
+}
+
 /* 会員登録 */
 .log-situation0 {
   background-color: #17184b;
@@ -38,6 +50,7 @@ header {
   font-size: 13px;
   border: solid 1px #eaf4fc;
   border-radius: 30px;
+  box-shadow: 1px 1px 1px gray;
 }
 
 /* ログイン */
@@ -50,6 +63,7 @@ header {
   font-size: 13px;
   border: solid 1px #c0c0c0;
   border-radius: 30px;
+  box-shadow: 1px 1px 1px gray;
 }
 
 /* ログアウト */
@@ -63,20 +77,22 @@ header {
   font-size: 13px;
   border: solid 1px #c0c0c0;
   border-radius: 30px;
+  box-shadow: 1px 1px 1px gray;
 }
 
-/* 投稿 */
+/* 投稿するボタン */
 .new-post {
-  background-color: aqua;
+  background-color: #2792c3;
+  color: #eaf4fc;
   height: 50px;
   width: 80px;
   padding-top: 5px;
   margin: 0 5px;
+  margin-right: 10px;
   text-align: center;
-  color: gray;
   font-size: 13px;
-  border: solid 1px white;
   border-radius: 30px;
+  box-shadow: 1px 1px 1px gray;
 }
 
 /* メニュー */
@@ -87,6 +103,7 @@ header {
 .menu-icon {
   color: white;
   font-size: 50px;
+  text-shadow: 1px 1px 1px gray;
 }
 
 .menu-lists {
@@ -100,4 +117,9 @@ header {
   background: #c1e4e9;
   padding: 4px 15px;
   z-index: 10;
+}
+
+.menu-list {
+  color: #17184b;
+  border-bottom: 1px solid gray;
 }
