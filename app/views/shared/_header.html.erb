@@ -16,7 +16,9 @@
     <div class="header-menu">
       <span class="menu-icon">≡</span>
       <ul class="menu-lists" style="display: none;">
-        <li class="menu-list"><%= link_to '積読一覧', bookmarks_user_path(current_user) %></li>
+        <% if user_signed_in? %>
+          <li class="menu-list"><%= link_to '積読一覧', bookmarks_user_path(current_user) %></li>
+        <% end %>
         <% unless current_page?(root_path) %>
           <li><%= link_to 'トップページへ戻る', root_path, class: "return-top-page" %></li>
         <% end %>
