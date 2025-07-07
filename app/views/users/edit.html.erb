@@ -3,29 +3,19 @@
 
   <div class="edit-main-contents">
 
-    <div class="provisional">
-      <div><%= link_to 'トップページへ戻る', root_path, class: "return-top-page" %></div>
-    </div>
-
     <div class="profile-input-area">
       <%= form_with model: @user, local: true do |f| %>
-        <div class="profile-edit-title">プロフィール編集</div>
+        <div class="profile-title">ー　プロフィール編集𓂃 ✍︎　ー</div>
         <div class="profile-input">
           <label>
-            <span class="profile-label-name">ニックネーム</span>
-            <p><%= f.text_field :nickname, class:"edit-f-input-nickname" %></p>
+            <div class="profile-label-name">ニックネーム</div>
+            <div><%= f.text_field :nickname, class:"edit-f-input-nickname" %></div>
           </label>
         </div>
         <div class="profile-input">
           <label>
-            <span class="profile-label-name">プロフィール</span>
-            <p><%= f.text_area :profile, class:"edit-f-input-sentence" %></p>
-          </label>
-        </div>
-        <div class="profile-input">
-          <label>
-            <span class="profile-label-name">アイコン</span>
-            <p><%= f.file_field :icon, class:"edit-f-input-icon" %></p>
+            <div class="profile-label-name">プロフィール</div>
+            <div><%= f.text_area :profile, class:"edit-f-input-text" %></div>
           </label>
         </div>
         <div class="update-confirm-area">

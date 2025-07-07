@@ -1,54 +1,75 @@
 /* メイン */
 .user-show-main {
-  background: linear-gradient(to bottom, #17184b, #274a78);
+  background-color: #2792c3;
 }
 
 .main-contents {
-  display: flex;
-}
-
-/* 右側のコンテンツ箱 */
-.right-contents {
-  width: calc(100% - 200px);
-  margin-right: 120px;
+  padding-top: 20px;
+  padding-left: 120px;
+  padding-right: 120px;
+  padding-bottom: 50px;
 }
 
 /* プロフィール */
 .profile-content {
-  height: 300px;
+  height: 500px;
   margin-top: 20px;
   padding: 10px;
-  border: 3px solid gray;
+  border: 3px solid #eaf4fc;
   border-radius: 10px;
+  color: #eaf4fc;
 }
 
 .user-info {
+  height: 50px;
   display: flex;
+  justify-content: space-between;
+}
+
+.my-page-contributor-name {
+  padding-left: 10px;
+  font-size: 25px;
+}
+
+.setting {
+  font-size: 25px;
+  color: #eaf4fc;
 }
 
 .follow-area {
   display: flex;
-  border-bottom: 1px solid gray;
+  justify-content: left;
+  border-bottom: 1px solid #eaf4fc;
 }
 
 .follow-btn {
   margin: 10px;
   padding: 3px 10px;
-  background-color: aqua;
   color: gray;
   border-radius: 30px;
   border-style: none;
 }
 
+.profile-sentence {
+  height: 400px;
+  white-space: pre-wrap;
+  overflow-y: auto;
+  overflow-x: hidden; /* 横スクロールを出さない */
+  word-wrap: break-word; /* 長い単語を折り返す */
+  word-break: break-word;
+}
+
+
 /* そのユーザーが投稿したストーリー一覧 */
-.user-index-contents {
+.user-summary-story {
   margin-top: 20px;
   margin-bottom: 50px;
 }
 
 .my-one-content {
-  margin-bottom: 20px;
-  color: gray;
-  border: solid 1px gray;
+  border: solid 1px #eaf4fc;
   border-radius: 10px;
+  color: #eaf4fc;
+  padding: 5px;
+  margin-bottom: 20px;
 }

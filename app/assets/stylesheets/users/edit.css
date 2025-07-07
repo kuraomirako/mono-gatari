@@ -1,26 +1,60 @@
 /* メイン */
 .user-edit-main {
-  background: linear-gradient(to bottom, #316745, #92b5a9);
+  background-color: #2792c3;
 }
 
 .edit-main-contents {
-  display: flex;
-}
-
-.provisional {
-  width: 200px;
-  flex-shrink: 0;
-}
-
-.my-page-right-contents {
-  width: calc(100% - 200px);
-  margin-right: 120px;
+  padding-top: 20px;
+  padding-left: 120px;
+  padding-right: 120px;
+  padding-bottom: 50px;
 }
 
 .profile-input-area {
   min-height: 700px;
+  color: #17184b;
 }
 
-.edit-main-contents {
-  padding-top: 15px;
+.profile-title {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.profile-input {
+  margin-bottom: 15px;
+}
+
+.profile-label-name {
+  font-size: 20px;
+}
+
+.edit-f-input-nickname {
+  width: 600px;
+  padding: 10px;
+  font-size: 15px;
+  color: gray;
+}
+
+.edit-f-input-text {
+  width: 600px;
+  min-height: 500px;
+  padding: 10px;
+  font-size: 15px;
+  color: gray;
+}
+
+/* 確認エリア */
+.update-confirm-area {
+  display: flex;
+  justify-content: left;
+}
+
+.update-btn {
+  width: 150px;
+  padding: 5px;
+  margin-right: 50px;
+  color: #595857;
+  font-size: 20px;
+  border-radius: 10px;
+  border: 1px solid gray;
 }
