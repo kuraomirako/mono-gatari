@@ -43,6 +43,7 @@
   font-size: 20px;
   color: #7d7d7d;
   margin-bottom: 15px;
+  border-radius: 5px;
 }
 
 .input-name {
@@ -51,6 +52,7 @@
   font-size: 15px;
   color: #7d7d7d;
   padding-top: 6px;
+  border-radius: 5px;
 }
 
 .input-birth-wrap {
@@ -64,6 +66,7 @@
   font-size: 15px;
   color: #7d7d7d;
   text-align: center;
+  border-radius: 5px;
 }
 
 /* 確認ボタン */
