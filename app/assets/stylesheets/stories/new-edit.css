@@ -1,14 +1,33 @@
 /* メイン */
-.edit-main {
+.new-main {
   background-color: #c1e4e9;
-  padding-left: 200px;
-  padding-right: 200px;
+  padding-top: 20px;
+  padding-left: 120px;
+  padding-right: 120px;
   padding-bottom: 50px;
 }
 
+
+
 /* 選択エリア */
-.choice-area {
+.top-area {
   display: flex;
+}
+
+.choice-area {
+  width: 80%;
+  display: flex;
+  color: #595857;
+}
+
+.select-box {
+  color: #595857;
+}
+
+.count-now {
+  width: 20%;
+  text-align: end;
+  color: #595857;
 }
 
 /* カテゴリー選択 */
@@ -43,6 +62,7 @@
 /* 入力エリア */
 .input-area {
   padding-bottom: 50px;
+  color: #595857;
 }
 
 /* 文字数注意書き */
@@ -66,6 +86,7 @@
   border-radius: 5px;
   border: 1px solid gray;
   font-size: 15px;
+  color: #595857;
 }
 
 .f-input-text {
@@ -76,12 +97,16 @@
   border-radius: 5px;
   border: 1px solid gray;
   font-size: 15px;
+  color: #595857;
 }
 
 /* 確認エリア */
-.confirm-area {
+.post-confirm-area {
   margin-bottom: 50px;
   padding: 5px;
+}
+
+.post-btn-box {
   display: flex;
   justify-content: center;
 }
@@ -90,17 +115,8 @@
   width: 150px;
   padding: 5px;
   margin-right: 50px;
+  color: #595857;
   font-size: 20px;
   border-radius: 10px;
   border: 1px solid gray;
-}
-
-.delete-confirm-btn {
-  width: 150px;
-  font-size: 15px;
-  padding: 5px;
-  padding-top: 8px;
-  border-radius: 10px;
-  border: solid 1px gray;
-  text-align: center;
 }
