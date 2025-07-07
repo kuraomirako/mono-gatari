@@ -1,0 +1,38 @@
+<%= render "shared/header" %>
+<div class="follow-main">
+
+  <div class="main-contents">
+    <div class="user-name"><%= @user.nickname %> さん</div>
+    <div class="followed">
+      <div class="follow-title">＜＜ フォロー中 ＞＞</div>
+      <% if @following.any? %>
+        <div class="one-followed">
+          <% @following.each do |followed| %>
+            <div>
+              <%= link_to followed.nickname, user_path(followed) %>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <p>あなたがフォロー中したユーザーが表示されます</p>
+      <% end %>
+    </div>
+
+    <div class="follower">
+      <div class="follow-title">＞＞ フォロワー ＜＜</div>
+       <% if @followers.any? %>
+        <div class="one-follower">
+          <% @following.each do |follower| %>
+            <div class="one-follower">
+              <%= link_to follower.nickname, user_path(follower) %>
+            </div>
+          <% end %>
+        </div>
+        <% else %>
+          <p>あなたをフォローしたユーザーが表示されます</p>
+        <% end %>
+    </div>
+  </div>
+
+</div>
+<%= render "shared/footer" %>

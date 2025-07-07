@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :follow]
   before_action :correct_user, only: [:edit, :update]
+  before_action :correct_user_for_follow, only: [:follow]
 
   def show
     @user = User.find(params[:id])
@@ -24,6 +25,11 @@ class UsersController < ApplicationController
     @bookmarked_stories = @user.bookmarked_stories
   end
 
+  def follow
+    @followers = @user.followers
+    @following = @user.following
+  end
+
 
   private
   def user_params
@@ -36,5 +42,14 @@ class UsersController < ApplicationController
 
   def correct_user
     redirect_to root_path unless current_user == @user
+  end
+
+  def correct_user_for_follow
+    Rails.logger.debug "current_user.id: #{current_user.id} (#{current_user.id.class})"
+    Rails.logger.debug "@user.id: #{@user.id} (#{@user.id.class})"
+  
+    unless current_user.id.to_s == @user.id.to_s
+      redirect_to root_path
+    end
   end
 end

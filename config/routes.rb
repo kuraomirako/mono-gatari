@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show, :edit, :update] do
     get 'bookmarks', on: :member
+    get 'follow', on: :member
   end
   resources :categories, only: [:show]
   resources :genres, only: [:show]

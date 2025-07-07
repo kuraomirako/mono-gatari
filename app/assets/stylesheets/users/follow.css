@@ -1,0 +1,35 @@
+/* メイン */
+.follow-main {
+  background-color: #2792c3;
+}
+
+.main-contents {
+  padding-top: 20px;
+  padding-left: 120px;
+  padding-right: 120px;
+  padding-bottom: 50px;
+  color: #eaf4fc;
+}
+
+.user-name {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.follow-title {
+  margin-bottom: 10px;
+}
+
+.followed, .follower {
+  width: 500px;
+  height: 500px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.one-followed, .one-follower {
+  border: solid 1px gray;
+  border-radius: 10px;
+  color: #c0c6c9;
+  padding: 5px;
+}
