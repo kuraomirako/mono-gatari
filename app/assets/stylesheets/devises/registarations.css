@@ -1,0 +1,84 @@
+/* メイン */
+.member-main {
+  background-color: #c1e4e9;
+  padding-top: 20px;
+  padding-left: 120px;
+  padding-right: 120px;
+  padding-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.form-main {
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+/* タイトル */
+.form-title {
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: #17184b;
+  text-align: center;
+}
+
+/* ラベルとフォームの箱 */
+.form-text-wrap {
+  margin-bottom: 10px;
+}
+
+.form-name {
+  color: #17184b;
+  display: block;
+}
+
+.indispensable {
+  font-size: 15px;
+  color: #274a78;
+}
+
+.input-default {
+  width: 400px;
+  height: 30px;
+  font-size: 20px;
+  color: #7d7d7d;
+  margin-bottom: 15px;
+}
+
+.input-name {
+  width: 200px;
+  height: 30px;
+  font-size: 15px;
+  color: #7d7d7d;
+  padding-top: 6px;
+}
+
+.input-birth-wrap {
+  display: flex;
+}
+
+.select-birth {
+  width: 100px;
+  height: 30px;
+  margin-right: 10px;
+  font-size: 15px;
+  color: #7d7d7d;
+  text-align: center;
+}
+
+/* 確認ボタン */
+.actions {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.new-user-btn {
+  width: 200px;
+  padding: 5px;
+  color: #595857;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid gray;
+  box-shadow: 1px 1px 1px gray;
+}

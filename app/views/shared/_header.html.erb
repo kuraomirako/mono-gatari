@@ -10,8 +10,8 @@
       <%= link_to 'log<br>out'.html_safe, destroy_user_session_path, data: {turbo_method: :delete}, class: "log-situation2" %>
       <%= link_to '投 稿<br>す る'.html_safe, new_story_path, class: "new-post" %>
     <% else %>
-      <%= link_to 'log<br>in'.html_safe, new_user_session_path, class: "log-situation1" %>
-      <%= link_to ' 会員 <br> 登録 '.html_safe, new_user_registration_path, class: "log-situation0" %>
+      <%= link_to 'log<br>i n'.html_safe, new_user_session_path, class: "log-situation1" %>
+      <%= link_to ' 会 員 <br> 登 録 '.html_safe, new_user_registration_path, class: "log-situation0" %>
     <% end %>
     <div class="header-menu">
       <span class="menu-icon">≡</span>
