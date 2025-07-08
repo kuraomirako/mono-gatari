@@ -9,9 +9,9 @@ class Story < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :bookmarking_users, through: :bookmarks, source: :user
 
-  validates :title, :body, presence: true
-  validates :body, length: { minimum: 300, message: "は300文字以上入力してください" }
-
-  validates :category_id, :genre_id, numericality: { other_than: 1, message: "を選択してください"}
+  validates :title, presence: true
+  validates :body, presence: true
+  validates :body, length: { minimum: 300, maximum: 10000, message: "300〜10000文字以内で入力してください" }
+  validates :category_id, :genre_id, numericality: { other_than: 1, message: "プルダウンを選択してください"}
 
 end
