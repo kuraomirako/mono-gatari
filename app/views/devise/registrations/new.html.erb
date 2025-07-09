@@ -5,6 +5,8 @@
   <div class='form-main'>
     <h1 class='form-title'>会員登録ページ</h1>
 
+    <%= render 'shared/error_messages', model: f.object %>
+
     <div class='form-text-wrap'>
       <label class="form-name">ニックネーム</label>
       <%= f.text_field :nickname, class:"input-default", id:"nickname", maxlength:"15" %>

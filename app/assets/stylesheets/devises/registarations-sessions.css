@@ -1,3 +1,7 @@
+.field_with_errors {
+  display: contents;
+}
+
 /* メイン */
 .member-main {
   background-color: #c1e4e9;
