@@ -3,6 +3,11 @@
 
   <div class="show-main-contents">
 
+    <div class="user-name"><!-- 投稿者名 -->
+      <%= link_to "#{@story.user.nickname}", user_signed_in? ? user_path(@story.user) : root_path, class: "user-name-link" %>
+      <span class=user-name-sub> さんの投稿</span>
+    </div>
+
     <div class="show-story-content"><!-- ストーリー配置 -->
       <div class="show-story-item">
         <div class="show-story-item1">
@@ -38,19 +43,25 @@
           </div>
         <% end %>
       </div>
-      <div class="bookmark-content">
-        <% if current_user.bookmarked_stories.exists?(@story.id) %>
-          <%= button_to "積読解除", bookmark_path(id: @story.bookmarks.find_by(user_id: current_user.id).id), method: :delete, class: "save-bookmark" %>
-        <% else %>
-          <%= button_to "積読する", bookmarks_path(story_id: @story.id), method: :post, class: "save-bookmark" %>
-        <% end %>
-      </div>
+      <% if current_user %>
+        <div class="bookmark-content">
+          <% if current_user.bookmarked_stories.exists?(@story.id) %>
+            <%= button_to "積読解除", bookmark_path(id: @story.bookmarks.find_by(user_id: current_user.id).id), method: :delete, class: "save-bookmark" %>
+          <% else %>
+            <%= button_to "積読する", bookmarks_path(story_id: @story.id), method: :post, class: "save-bookmark" %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
 
     <div class="comment-content"><!-- コメント欄 -->
-      <%= form_with model: [@story, Comment.new], local: true, data: { turbo: false } do |f| %>
-        <%= f.text_field :comment_box, class:"f-input-comment", id:"comment-input", placeholder:"コメントを入力" %>
-        <%= f.submit "送信", name: "post-comment", class: "post-comment-btn" %>
+      <% if current_user %>
+        <%= form_with model: [@story, Comment.new], local: true, data: { turbo: false } do |f| %>
+          <%= f.text_field :comment_box, class:"f-input-comment", id:"comment-input", placeholder:"コメントを入力" %>
+          <%= f.submit "送信", name: "post-comment", class: "post-comment-btn" %>
+        <% end %>
+      <% else %>
+        <div class="please-login">　𓂃🖋コメント投稿にはログインが必要です</div>
       <% end %>
       <div class="all-comments"><!-- コメント一覧 -->
         <% @comments.each do |comment| %>

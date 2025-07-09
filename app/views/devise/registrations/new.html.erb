@@ -3,11 +3,11 @@
 <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
 
   <div class='form-main'>
-    <h1 class='form-title'>新規登録ページ</h1>
+    <h1 class='form-title'>会員登録ページ</h1>
 
     <div class='form-text-wrap'>
       <label class="form-name">ニックネーム</label>
-      <%= f.text_area :nickname, class:"input-default", id:"nickname", maxlength:"15" %>
+      <%= f.text_field :nickname, class:"input-default", id:"nickname", maxlength:"15" %>
     </div>
 
     <div class='form-text-wrap'>
@@ -23,8 +23,8 @@
     <div class='form-text-wrap'>
       <label class="form-name">お名前（全角）</label>
       <div class='input-name-wrap'>
-        <%= f.text_area :last_name, class:"input-name", id:"last_name", placeholder:"例) 山田" %>
-        <%= f.text_area :first_name, class:"input-name", id:"first-name", placeholder:"例) 花子" %>
+        <%= f.text_field :last_name, class:"input-default-half", id:"last_name", placeholder:"例) 山田" %>
+        <%= f.text_field :first_name, class:"input-default-half", id:"first-name", placeholder:"例) 花子" %>
       </div>
     </div>
 

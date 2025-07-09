@@ -16,7 +16,7 @@ class StoriesController < ApplicationController
   def create
     @story = current_user.stories.new(story_params)
     if @story.save
-      redirect_to new_story_path
+      redirect_to root_path, notice: '投稿が完了しました'
     else
       render :new, status: :unprocessable_entity
     end

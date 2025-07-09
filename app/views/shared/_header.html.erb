@@ -1,11 +1,11 @@
 <header>
-  <div class="heading-left"><!--ヘッダー-->
+  <div class="heading-left">
     <%= link_to '者 -モノ- 語り', root_path, class: "title-logo" %>
   </div>
   <div class="heading-right">
     <% if user_signed_in? %>
     <div class="greeting">おかえり、
-      <p>　<%= link_to truncate(current_user.nickname, length: 5), user_path(current_user), class: "user-my-page" %></p>
+      <p>　<%= link_to truncate(current_user.nickname, length: 7, omission: '...' ), user_path(current_user), class: "user-my-page" %></p>
     </div>
       <%= link_to 'log<br>out'.html_safe, destroy_user_session_path, data: {turbo_method: :delete}, class: "log-situation2" %>
       <%= link_to '投 稿<br>す る'.html_safe, new_story_path, class: "new-post" %>
@@ -16,13 +16,10 @@
     <div class="header-menu">
       <span class="menu-icon">≡</span>
       <ul class="menu-lists" style="display: none;">
-        <% if user_signed_in? %>
-          <li class="menu-list"><%= link_to '積読一覧', bookmarks_user_path(current_user) %></li>
-          <li class="menu-list"><%= link_to 'フォロー一覧', follow_user_path(current_user) %></li>
-        <% end %>
-        <% unless current_page?(root_path) %>
-          <li><%= link_to 'トップページへ戻る', root_path, class: "return-top-page" %></li>
-        <% end %>
+          <li class="menu-list"><%= link_to '積読', user_signed_in? ? bookmarks_user_path(current_user) : root_path %></li>
+          <li class="menu-list"><%= link_to 'フォロー', user_signed_in? ? follow_user_path(current_user) : root_path %></li>
+          <li class="menu-list"><%= link_to 'マイページ', user_signed_in? ? user_path(current_user) : root_path %></li>
+          <li class="menu-list"><%= link_to 'トップページへ戻る', root_path, class: "return-top-page" %></li>
       </ul>
     </div>
   </div>

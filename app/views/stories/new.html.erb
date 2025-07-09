@@ -6,11 +6,11 @@
     <div class="choice-area">
       <div class="category-choice">
         <span class="pulldown-title">カテゴリー選択：</span>
-        <%= f.collection_select(:category_id, @categories, :id, :name, {}, {class:"select-box", id:"story-category"}) %>
+        <%= f.collection_select(:category_id, @categories, :id, :name, {}, {class:"select-box #{'field-error' if @story.errors[:category_id].any?}", id:"story-category"}) %>
       </div>
       <div class="genre-choice">
         <span class="pulldown-title">ジャンル選択：</span>
-        <%= f.collection_select(:genre_id, @genres, :id, :name, {}, {class:"select-box", id:"story-genre"}) %>
+        <%= f.collection_select(:genre_id, @genres, :id, :name, {}, {class:"select-box #{'field-error' if @story.errors[:genre_id].any?}", id:"story-genre"}) %>
       </div>
     </div>
     <div class="count-now" id="char-count">0文字</div>
@@ -20,13 +20,13 @@
     <div class="input-title">
       <label>
         <span class="label-name">〔　タイトル　〕</span><span class="information">1〜100文字</span>
-        <p><%= f.text_field :title, class:"f-input-title", id:"story-title-input", placeholder:"タイトルを入力してください", maxlength:"100" %></p>
+        <p><%= f.text_field :title, class:"f-input-title #{'field-error' if @story.errors[:title].any?}",id:"story-title-input", placeholder:"タイトルを入力してください", maxlength:"100" %></p>
       </label>
     </div>
     <div class="input-text">
       <label>
         <span class="label-name">〔　　本 文　　〕</span><span class="information">300〜10000文字</span>
-        <p><%= f.text_area :body, class:"f-input-text", id:"story-body-input", placeholder:"本文を入力してください" ,rows:"50" ,maxlength:"10000" %></p>
+        <p><%= f.text_area :body, class:"f-input-text #{'field-error' if @story.errors[:body].any?}", id:"story-body-input", placeholder:"本文を入力してください" ,rows:"50" ,maxlength:"10000" %></p>
       </label>
     </div>
   </div>
@@ -36,6 +36,7 @@
       <%= f.submit "投稿する", class: "post-btn" %>
     </div>
   </div>
+
   <% end %>
 
 

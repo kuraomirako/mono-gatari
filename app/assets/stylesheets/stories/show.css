@@ -11,6 +11,18 @@
   padding-bottom: 100px;
 }
 
+/* 投稿者名 */
+.user-name-link {
+  color: #eaf4fc;
+  font-size: 20px;
+  border-bottom: 1px solid gray;
+}
+
+.user-name-sub {
+  color: #eaf4fc;
+  font-size: 15px;
+}
+
 /* ストーリー配置 */
 .show-story-content {
   margin-top: 30px;
@@ -128,6 +140,10 @@
 
 
 /* コメント送信欄 */
+.please-login {
+  color: gray;
+}
+
 .comment-content {
   background-color: #eaf4fc;
   border-radius: 10px;

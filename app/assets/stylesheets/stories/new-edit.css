@@ -120,3 +120,8 @@
   border-radius: 10px;
   border: 1px solid gray;
 }
+
+.field-error {
+  border: 2px solid red;
+  background-color: #fff0f0;
+}

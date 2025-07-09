@@ -1,26 +1,25 @@
 <%= render "shared/header" %>
 
 <div class='member-main'>
-<%= form_with model: @user, url: user_session_path, local: true do |f| %>
+  <%= form_with model: @user, url: user_session_path, local: true do |f| %>
 
-  <div class='form-main'>
-    <h1 class='form-title'>ログインページ</h1>
+    <div class='form-main'>
+      <h1 class='form-title'>ログインページ</h1>
 
-    <div class='form-text-wrap'>
-      <label class="form-name">メールアドレス</label>
-      <%= f.email_field :email, class:"input-default", id:"email" %>
+      <div class='form-text-wrap'>
+        <label class="form-name">メールアドレス</label>
+        <%= f.email_field :email, class:"input-default", id:"email" %>
+      </div>
+
+       <div class='form-text-wrap'>
+        <label class="form-name">パスワード</label>
+        <p class="indispensable">（半角英数字を両方を含めて、6文字以上で設定しています）</p>
+        <%= f.password_field :password, class:"input-default", id:"password", minlength:"6" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "モノ語りの世界へ行く", class: "new-user-btn" %>
+      </div>
     </div>
-
-     <div class='form-text-wrap'>
-      <label class="form-name">パスワード</label>
-      <p class="indispensable">（半角英数字を両方を含めて、6文字以上で設定しています）</p>
-      <%= f.password_field :password, class:"input-default", id:"password", minlength:"6" %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "モノ語りの世界へ入る", class: "new-user-btn" %>
-    </div>
-  </div>
-
-    <% end %>
+  <% end %>
 </div>

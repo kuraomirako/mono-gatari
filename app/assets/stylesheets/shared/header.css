@@ -111,15 +111,17 @@ header {
   top: 90%;
   right: 30%;
   width: max-content;
-  min-height: 100px;
+  height: 200px;
   white-space: nowrap;
   display: none;
   background: #c1e4e9;
   padding: 4px 15px;
   z-index: 10;
+  box-shadow: 3px 3px 5px gray;
 }
 
 .menu-list {
   color: #17184b;
   border-bottom: 1px solid gray;
+  margin-top: 10px;
 }
