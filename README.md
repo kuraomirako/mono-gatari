@@ -1,156 +1,135 @@
-```mermaid
-erDiagram
-  users ||--o{ stories : has
-  users ||--o{ comments : has
-  users ||--o{ reactions : has
-  users ||--o{ reads : has
-  users ||--o{ relationships : has
-  users ||--o{ followed_relationships : has
-  users ||--o{ follower_relationships : has
+# アプリケーション名
+---
+者-モノ-語り　（モノガタリ）
 
-  stories }o--|| users : belongs_to
-  stories ||--o{ comments : has
-  stories ||--o{ reactions : has
-  stories ||--o{ reads : has
+# アプリケーション概要
+---
+物語を投稿できる・読める　長文専門のプラットフォーム
 
-  comments }o--|| users : belongs_to
-  comments }o--|| stories : belongs_to
+# URL
+---
+https://mono-gatari.onrender.com
 
-  reactions }o--|| users : belongs_to
-  reactions }o--|| stories : belongs_to
+# テスト用アカウント
+---
+・Basic認証ID：kuraomirako
+・Basic認証パスワード：7700
+・メールアドレス：ac.test@example.com
+・パスワード：test000
 
-  relationships }o--|| users : follower
-  relationships }o--|| users : followed
+# 利用方法
+---
+### 物語投稿
+---
+......................................................................................
+《　会員登録の特権　》
+- 『コメントの送信/積読機能(ブックマーク)の利用/フォロー機能/マイページ作成』が利用可能
 
-  reads }o--|| users : belongs_to
-  reads }o--|| stories : belongs_to
+- 会員登録は、ヘッダーの「会員登録」ボタンから可能
 
-  users {
-    BIGINT id PK
-    VARCHAR nickname
-    VARCHAR email
-    VARCHAR encrypted_password
-    VARCHAR last_name
-    VARCHAR first_name
-    DATE birthday
-    DATETIME created_at
-  }
+......................................................................................
 
-  stories {
-    BIGINT id PK
-    BIGINT user_id FK
-    VARCHAR title
-    TEXT body
-    INTEGER category
-    INTEGER genre
-    BOOLEAN draft
-    DATETIME created_at
-  }
+《　物語投稿の仕方　》
+- ヘッダーの「投稿する」ボタンから、「カテゴリー/ジャンル/タイトル/本文」を入力すると投稿ができる
 
-  comments {
-    BIGINT id PK
-    BIGINT user_id FK
-    BIGINT story_id FK
-    TEXT content
-    DATETIME created_at
-  }
 
-  reactions {
-    BIGINT id PK
-    BIGINT user_id FK
-    BIGINT story_id FK
-    INTEGER reaction
-    DATETIME created_at
-  }
+- 物語を読むだけなら会員登録不要
 
-  relationships {
-    BIGINT id PK
-    BIGINT follower_id FK
-    BIGINT followed_id FK
-    DATETIME created_at
-  }
+......................................................................................
 
-  reads {
-    BIGINT id PK
-    BIGINT user_id FK
-    BIGINT story_id FK
-    DATETIME read_at
-  }
-```
+# アプリケーションを作成した背景
+---
+投稿者・読者 それぞれににテーマがあります。
 
-```
-## usersテーブル
-ニックネーム-nickname  (string型, NOT NULL)
-メールアドレス-email      (string型, NOT NULL)
-パスワード-password      (string型, NOT NULL)
-名字-last_name              (string型, NOT NULL)
-名前-first_name              (string型, NOT NULL)
-生年月日-birthday           (date型, NOT NULL)
-※アイコン画像はActiveStorageのため含めない
+◀︎ 投稿者 ▶︎
+『自分の経験談』『知り合いに話すほどではない、取り止めのない話しだが、カタチとして残しておきたい』を叶える
 
-アソシエーション
+◀︎ 読 者 ▶︎
+『活字が好き』　『人の話しを聞くのは好きだが、実際会うまでには至らない』　『身近にいる人では聞ける話が限られる』を叶える
+
+端末の中とはいえ、落ち着ける場所、ふとした時に着たくなる場所を作りたいと思いました。
+
+今は、パッとつぶやけるアプリやブログ、小説投稿アプリなど... 類似アプリはたくさんあると思います。
+その中でこのアプリケーションの立ち位置は、"物語投稿を目的とした長文専門"のプラットフォームを目指しました。
+
+
+# 実装予定の機能
+---
+下書き保存機能、検索機能、退会機能　を実装予定
+
+# データベース設計
+---
+
+
+# 開発環境
+---
+・フレームワーク：Ruby On Rails
+・言語：Ruby、JavaScript、HTML、CSS
+・データベース：MySQL(開発環境)、PostgreSQL(本番環境)
+・開発ツール：VSCode、GitHub、Render
+・テスト：RSpec、FactoryBot
+
+
+# 工夫したポイント
+---
+- 長文専門のため、300文字未満は投稿できないように設定
+- 落ち着ける場所の雰囲気作りのため、フォロー数/フォロワー数は、自分自身しか見れないように設定
+---
+
+
+#### ◇　users テーブル
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| nickname           | string | null: false |
+| email              | string | null: false |
+| encrypted_password | string | null: false |
+| last_name          | string | null: false |
+| first_name         | string | null: false |
+| birthday           | date   | null: false |
+
+#### ⇆　association
 has_many :stories
 has_many :comments
-has_many :reactions
-has_many :reads
-has_many :relationships
-has_many :followings, through: :relationships
-has_many :followers, through: :relationships
+has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
+has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
+has_many :following, through: :active_relationships, source: :followed
+has_many :followers, through: :passive_relationships, source: :follower
+has_many :reactions, dependent: :destroy
+has_many :bookmarks, dependent: :destroy
+has_many :bookmarked_stories, through: :bookmarks, source: :story
 
+......................................................................................
 
-## storiesテーブル
-タイトル-title             (string型, NOT NULL)
-本文-body                  (text型, NOT NULL)
-カテゴリー-category (integer型 NOT NULL)
-　※実話/創作
-ジャンル-genre          (integer型 NOT NULL)
-　※日常/人間関係/仕事勉強/旅行/夢/SF
-下書き-draft               (boolean型)
-　※ trueなら下書き、falseで公開
-user                           (references型, NOT NULL, 外部キー)
+#### ◇　stories テーブル
+| Column             | Type   | Options     |
+| ------------------ | ------ | ----------- |
+| title       | string  | null: false |
+| body        | text    | null: false |
+| category_id | integer | null: false |
+| genre_id    | integer | null: false |
 
-アソシエーション
+#### ⇆　association
 belongs_to :user
+belongs_to_active_hash :category
+belongs_to_active_hash :genre
 has_many :comments
-has_many :reactions
-has_many :reads
+has_many :reactions, dependent: :destroy
+has_many :bookmarks, dependent: :destroy
+has_many :bookmarking_users, through: :bookmarks, source: :user
+
+......................................................................................
 
 
-## commentsテーブル
-コメント-content  (text型)
-user                       (references型, NOT NULL, 外部キー)
-story                      (references型, NOT NULL, 外部キー)
-
-アソシエーション
-belongs_to :user
-belongs_to :story
 
 
-## reactionsテーブル
-リアクション種別-reaction (integer型, NOT NULL) ※ enumで管理（例：0=感動, 1=すごい, 2=面白い, 3=パチパチ）
-user                                    (references型, NOT NULL, 外部キー)
-story                                   (references型, NOT NULL, 外部キー)
 
-アソシエーション
-belongs_to :user  
-belongs_to :story
+......................................................................................
 
 
-## relationshipsテーブル
-フォローするユーザー-follower     (references型, NOT NULL, 外部キー, class_name: "User")
-フォローされるユーザー-followed (references型, NOT NULL, 外部キー, class_name: "User")
+......................................................................................
 
-アソシエーション：
-belongs_to :follower, class_name: "User"
-belongs_to :followed, class_name: "User"
+......................................................................................
 
+......................................................................................
 
-## readsテーブル
-リアクション種別-reaction (integer型, NOT NULL) ※ enumで管理（例：0=感動, 1=すごい, 2=面白い, 3=パチパチ）
-user                                    (references型, NOT NULL, 外部キー)
-story                                   (references型, NOT NULL, 外部キー)
-
-アソシエーション
-belongs_to :user  
-belongs_to :story
-```
+......................................................................................
