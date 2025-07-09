@@ -17,12 +17,12 @@ RSpec.describe Story, type: :model do
       it 'category_idが1では登録できない' do
         @story.category_id = 1
         @story.valid?
-        expect(@story.errors.full_messages).to include("Category プルダウンを選択してください")
+        expect(@story.errors.full_messages).to include("Category must be other than 1")
       end
       it 'genre_idが1では登録できない' do
         @story.genre_id = 1
         @story.valid?
-        expect(@story.errors.full_messages).to include("Genre プルダウンを選択してください")
+        expect(@story.errors.full_messages).to include("Genre must be other than 1")
       end
       it 'titleが空では登録できない' do
         @story.title = ''
@@ -37,12 +37,12 @@ RSpec.describe Story, type: :model do
       it 'bodyが300文字以下では登録できない' do
         @story.body = Faker::Lorem.paragraph_by_chars(number: 299)
         @story.valid?
-        expect(@story.errors.full_messages).to include('Body 300〜10000文字以内で入力してください')
+        expect(@story.errors.full_messages).to include('Body is too short (minimum is 300 characters)')
       end
       it 'bodyが10000文字以上では登録できない' do
         @story.body = Faker::Lorem.paragraph_by_chars(number: 10001)
         @story.valid?
-        expect(@story.errors.full_messages).to include('Body 300〜10000文字以内で入力してください')
+        expect(@story.errors.full_messages).to include('Body is too long (maximum is 10000 characters)')
       end
       it 'userが紐づいていなければ登録できない' do
         @story.user = nil

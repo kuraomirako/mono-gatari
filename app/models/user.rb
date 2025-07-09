@@ -13,11 +13,11 @@ class User < ApplicationRecord
   has_many :bookmarked_stories, through: :bookmarks, source: :story
 
   validates :nickname, presence: true,
-                       length: { minimum: 1, maximum: 15, message: "1~15文字以内で設定してください" }
+                       length: { minimum: 1, maximum: 15 }
   validates :last_name, presence: true,
-                        format: { with: /\A[ぁ-んァ-ヶー-龥々ー]+\z/, message: '日本語を全角で入力してください' }
+                        format: { with: /\A[ぁ-んァ-ヶー-龥々ー]+\z/ }
   validates :first_name, presence: true,
-                         format: { with: /\A[ぁ-んァ-ヶー-龥々ー]+\z/, message: '日本語を全角で入力してください' }
+                         format: { with: /\A[ぁ-んァ-ヶー-龥々ー]+\z/ }
   validates :birthday, presence: true
-  validates :password, format: { with: /\A(?=.*[a-z])(?=.*\d)[a-z\d]{6,}\z/i, message: '半角英数字を両方を含めて、6文字以上で設定してください' }
+  validates :password, format: { with: /\A(?=.*[a-z])(?=.*\d)[a-z\d]{6,}\z/i }
 end

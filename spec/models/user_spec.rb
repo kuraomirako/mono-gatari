@@ -46,7 +46,7 @@ RSpec.describe User, type: :model do
       it 'nicknameが16文字以上では登録できない' do
         @user.nickname = Faker::Lorem.characters(number: 16)
         @user.valid?
-        expect(@user.errors.full_messages).to include('Nickname 1~15文字以内で設定してください')
+        expect(@user.errors.full_messages).to include('Nickname is too long (maximum is 15 characters)')
       end
       it '重複したemailが存在する場合は登録できない' do
         @user.save
@@ -75,26 +75,26 @@ RSpec.describe User, type: :model do
         @user.password = 'abcdef'
         @user.password_confirmation = 'abcdef'
         @user.valid?
-        expect(@user.errors.full_messages).to include('Password 半角英数字を両方を含めて、6文字以上で設定してください')
+        expect(@user.errors.full_messages).to include('Password is invalid')
       end
       it 'passwordが半角数字のみでは登録できない' do
         @user.password = '123456'
         @user.password_confirmation = '123456'
         @user.valid?
-        expect(@user.errors.full_messages).to include('Password 半角英数字を両方を含めて、6文字以上で設定してください')
+        expect(@user.errors.full_messages).to include('Password is invalid')
       end
       it 'passwordが全角では登録できない' do
         @user.password = '１２３４５６'
         @user.password_confirmation = '１２３４５６'
         @user.valid?
-        expect(@user.errors.full_messages).to include('Password 半角英数字を両方を含めて、6文字以上で設定してください')
+        expect(@user.errors.full_messages).to include('Password is invalid')
       end
       it 'last_name、first_nameに半角が含まれている場合は登録できない' do
         @user.last_name = 'ﾀﾛｳ'
         @user.first_name = 'yamada'
         @user.valid?
-        expect(@user.errors.full_messages).to include('Last name 日本語を全角で入力してください')
-        expect(@user.errors.full_messages).to include('First name 日本語を全角で入力してください')
+        expect(@user.errors.full_messages).to include('Last name is invalid')
+        expect(@user.errors.full_messages).to include('First name is invalid')
       end
     end
   end

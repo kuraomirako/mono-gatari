@@ -11,7 +11,7 @@ class Story < ApplicationRecord
 
   validates :title, presence: true
   validates :body, presence: true
-  validates :body, length: { minimum: 300, maximum: 10000, message: "300〜10000文字以内で入力してください" }
-  validates :category_id, :genre_id, numericality: { other_than: 1, message: "プルダウンを選択してください"}
+  validates :body, length: { minimum: 300, maximum: 10000 }
+  validates :category_id, :genre_id, numericality: { other_than: 1}
 
 end
