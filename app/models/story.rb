@@ -10,7 +10,6 @@ class Story < ApplicationRecord
   has_many :bookmarking_users, through: :bookmarks, source: :user
 
   validates :title, presence: true
-  validates :body, presence: true
   validates :body, length: { minimum: 300, maximum: 10000 }
   validates :category_id, :genre_id, numericality: { other_than: 1}
 

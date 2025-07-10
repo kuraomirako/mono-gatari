@@ -9,12 +9,12 @@
         <div class="one-followed">
           <% @following.each do |followed| %>
             <div>
-              <%= link_to followed.nickname, user_path(followed) %>
+              <%= link_to followed.nickname, user_path(followed),class: "one-followed-link" %>
             </div>
           <% end %>
         </div>
       <% else %>
-        <p>あなたがフォロー中したユーザーが表示されます</p>
+        <p class='follow-info'>あなたがフォロー中したユーザーが表示されます</p>
       <% end %>
     </div>
 
@@ -24,12 +24,12 @@
         <div class="one-follower">
           <% @following.each do |follower| %>
             <div class="one-follower">
-              <%= link_to follower.nickname, user_path(follower) %>
+              <%= link_to follower.nickname, user_path(follower), class: "one-follower-link" %>
             </div>
           <% end %>
         </div>
         <% else %>
-          <p>あなたをフォローしたユーザーが表示されます</p>
+          <p class='follow-info'>あなたをフォローしたユーザーが表示されます</p>
         <% end %>
     </div>
   </div>

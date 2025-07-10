@@ -1,0 +1,18 @@
+#error_explanation {
+  color: #e83929;          /* エラー全体の文字色 */
+  background-color: #fff0f0; /* 薄ピンク背景など */
+  border: 1px solid #e83929;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* sessionページ */
+.alert-message {
+  color: #e83929;          /* エラー全体の文字色 */
+  background-color: #fff0f0; /* 薄ピンク背景など */
+  border: 1px solid #e83929;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}

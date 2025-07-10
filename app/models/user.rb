@@ -12,12 +12,11 @@ class User < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :bookmarked_stories, through: :bookmarks, source: :story
 
-  validates :nickname, presence: true,
-                       length: { minimum: 1, maximum: 15 }
+  validates :nickname, presence: true, length: { maximum: 15 }
   validates :last_name, presence: true,
-                        format: { with: /\A[ぁ-んァ-ヶー-龥々ー]+\z/ }
+                        format: { with: /\A[ぁ-んァ-ヶー-龥々ー]+\z/, allow_blank: true }
   validates :first_name, presence: true,
-                         format: { with: /\A[ぁ-んァ-ヶー-龥々ー]+\z/ }
+                         format: { with: /\A[ぁ-んァ-ヶー-龥々ー]+\z/, allow_blank: true }
   validates :birthday, presence: true
-  validates :password, format: { with: /\A(?=.*[a-z])(?=.*\d)[a-z\d]{6,}\z/i }
+  validates :password, format: { with: /\A(?=.*[a-z])(?=.*\d)[a-z\d]{6,}\z/i }, if: -> { password.present? }
 end

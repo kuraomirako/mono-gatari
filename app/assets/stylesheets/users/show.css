@@ -52,11 +52,7 @@
 
 .profile-sentence {
   height: 400px;
-  white-space: pre-wrap;
   overflow-y: auto;
-  overflow-x: hidden; /* 横スクロールを出さない */
-  word-wrap: break-word; /* 長い単語を折り返す */
-  word-break: break-word;
 }
 
 

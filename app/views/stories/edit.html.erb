@@ -2,6 +2,8 @@
 <div class="new-main">
 
   <%= form_with model: @story, local: true, data: { turbo: false } do |f| %>
+    <%= render 'shared/error_messages', resource: @story %>
+
   <div class="top-area"><!--カテゴリージャンル選択・文字数エリア-->
     <div class="choice-area">
       <div class="category-choice">

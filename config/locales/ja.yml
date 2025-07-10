@@ -1,0 +1,33 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+      story: ストーリー
+    attributes:
+      user:
+        nickname: ニックネーム
+        email: メールアドレス
+        password: パスワード
+        last_name: お名前（姓）
+        first_name: お名前（名）
+        birthday: 生年月日
+      story:
+        title: タイトル
+        body: 本文
+        category_id: カテゴリー
+        genre_id: ジャンル
+  errors:
+    messages:
+      blank: "を入力してください"
+      too_short: "は%{count}文字以上で入力してください"
+      too_long: "は%{count}文字以内で入力してください"
+      invalid: "の形式が正しくありません"
+      taken: "はすでに存在します"
+      not_saved: ""
+      other_than: "を選択してください"
+  devise:
+    failure:
+      invalid: "メールアドレスまたはパスワードが違います"
+      not_found_in_database: "メールアドレスまたはパスワードが違います"
+      timeout: "セッションの有効期限が切れました。もう一度ログインしてください"
+      inactive: "アカウントが有効化されていません"
