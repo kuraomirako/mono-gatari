@@ -23,15 +23,14 @@
 .followed, .follower {
   width: 500px;
   height: 500px;
-  overflow-y: auto;
   margin-bottom: 20px;
 }
 
-.one-followed, .one-follower {
-  border: solid 1px gray;
-  border-radius: 10px;
+.one-followed-box, .one-follower-box {
+  border-bottom: solid 1px gray;
   color: #c0c6c9;
   padding: 5px;
+  margin-bottom: 5px;
 }
 
 .one-followed-link, .one-follower-link {

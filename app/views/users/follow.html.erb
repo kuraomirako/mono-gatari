@@ -8,7 +8,7 @@
       <% if @following.any? %>
         <div class="one-followed">
           <% @following.each do |followed| %>
-            <div>
+            <div class="one-followed-box">
               <%= link_to followed.nickname, user_path(followed),class: "one-followed-link" %>
             </div>
           <% end %>
@@ -22,8 +22,8 @@
       <div class="follow-title">＞＞ フォロワー ＜＜</div>
        <% if @followers.any? %>
         <div class="one-follower">
-          <% @following.each do |follower| %>
-            <div class="one-follower">
+          <% @followers.each do |follower| %>
+            <div class="one-follower-box">
               <%= link_to follower.nickname, user_path(follower), class: "one-follower-link" %>
             </div>
           <% end %>

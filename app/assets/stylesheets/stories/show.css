@@ -56,7 +56,6 @@
 .show-story-main {
   min-height: 700px;
   padding: 10px;
-  overflow-y: auto;
 }
 
 .show-post-date {

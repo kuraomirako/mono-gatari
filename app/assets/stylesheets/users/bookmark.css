@@ -1,10 +1,18 @@
 /* メイン */
 .bookmark-main {
-  background: linear-gradient(to bottom, #17184b, #274a78);
+  background-color: #2792c3;
+}
+
+.bm-main-contents {
+  padding-top: 20px;
+  padding-left: 120px;
+  padding-right: 120px;
+  padding-bottom: 50px;
+  color: #eaf4fc;
 }
 
 .category-link, .genre-link {
-  color: #eaf4fc;
+
   font-size: 20px;
   list-style: none;
 }
@@ -21,4 +29,70 @@
   padding-top: 50px;
   padding-bottom: 100px;
   margin-left: 200px;
+}
+
+/* 1つの新着ストーリー */
+.bm-one-content {
+  border: solid 1px;
+  border-radius: 10px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+/* ストーリーアイテム */
+.bm-index-story-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* タグ箱：カテゴリー、ジャンル */
+.bm-index-story-item1 {
+  display: flex;
+}
+
+/* カテゴリータグ */
+.bm-index-category-tag {
+  background-color: #f2f2b0;
+  color: #17184b;
+  padding: 0 5px;
+  padding-top: 3px;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px,8px;
+  font-size: 13px;
+}
+
+/* ジャンルタグ */
+.bm-index-genre-tag {
+  background-color: #f8e58c;
+  color: #17184b;
+  padding: 0 5px;
+  padding-top: 3px;
+  border-radius: 5px;
+  margin: 5px 5px 5px 2px;
+  padding: 5px,8px;
+  font-size: 13px;
+}
+
+/* その他情報箱：文字数、日付 */
+.bm-index-story-item2 {
+  display: flex;
+}
+
+.bm-index-character-count {
+  margin: 5px;
+}
+
+.bm-index-post-date {
+  margin: 5px;
+}
+
+/* タイトル、本文 */
+.bm-index-story-main {
+  padding-top: 5px;
+}
+
+.bm-story-title-link {
+  font-size: 20px;
+  border-bottom: 1px solid;
 }
