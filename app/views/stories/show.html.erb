@@ -57,8 +57,10 @@
     <div class="comment-content"><!-- コメント欄 -->
       <% if current_user %>
         <%= form_with model: [@story, Comment.new], local: true, data: { turbo: false } do |f| %>
-          <%= f.text_field :comment_box, class:"f-input-comment", id:"comment-input", placeholder:"コメントを入力" %>
-          <%= f.submit "送信", name: "post-comment", class: "post-comment-btn" %>
+          <div class="send-comment">
+            <%= f.text_field :comment_box, class:"f-input-comment", id:"comment-input", placeholder:"コメントを入力" %>
+            <%= f.submit "送信", name: "post-comment", class: "post-comment-btn" %>
+          </div>
         <% end %>
       <% else %>
         <div class="please-login">　𓂃🖋コメント投稿にはログインが必要です</div>

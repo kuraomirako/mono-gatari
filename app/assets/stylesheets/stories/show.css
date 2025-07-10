@@ -150,24 +150,28 @@
   min-height: 200px;
   margin-top: 10px;
   margin-bottom: 50px;
-  padding: 5px 10px 5px 5px;
+  padding: 20px 10px 10px 5px;
+}
+
+.send-comment {
+  width: 100%;
+  display: flex;
+  gap: 5px;
 }
 
 .f-input-comment {
+  flex: 1; 
   height: 40px;
-  width: 90%;
   padding: 10px;
-  margin-top: 10px;
   border-radius: 5px;
   border: 1px solid gray;
   font-size: 15px;
 }
 
 .post-comment-btn {
+  width: 80px;
   height: 40px;
-  width: 70px;
   padding: 10px;
-  margin-top: 10px;
   border-radius: 5px;
   border: 1px solid gray;
   font-size: 13px;
@@ -190,9 +194,15 @@
   display: flex;
 }
 
+.comment-post-date {
+  margin-right: 10px;
+}
+
 .comment-delete {
   position: relative;
+  color: 
 }
+
 
 .comment-action-list {
   position: absolute;
