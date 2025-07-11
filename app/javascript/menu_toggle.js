@@ -1,7 +1,7 @@
 document.addEventListener('turbo:load', () => {
   // ▽ 詳細ページの編集・削除メニュー
-  const toggleDetail = document.querySelector('.toggle-detail');
-  const detailList = document.querySelector('.detail_list');
+  const toggleDetail = document.querySelector('.story-menu-icon');
+  const detailList = document.querySelector('.story-menu-lists');
 
   if (toggleDetail && detailList) {
     toggleDetail.addEventListener('click', () => {
@@ -14,7 +14,7 @@ document.addEventListener('turbo:load', () => {
   }
 
   // ▽ 詳細ページのコメント削除メニュー
-  const toggleCommentDeletes = document.querySelectorAll('.toggle-comment-delete');
+  const toggleCommentDeletes = document.querySelectorAll('.comment-menu-icon');
 
   toggleCommentDeletes.forEach(toggle => {
     toggle.addEventListener('click', () => {

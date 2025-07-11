@@ -34,6 +34,7 @@
 .setting {
   font-size: 25px;
   color: #eaf4fc;
+  text-shadow: 2px 1px 3px #17184b;
 }
 
 .follow-area {
@@ -53,6 +54,8 @@
 .profile-sentence {
   height: 400px;
   overflow-y: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 

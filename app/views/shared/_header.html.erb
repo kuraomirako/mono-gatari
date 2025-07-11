@@ -16,10 +16,10 @@
     <div class="header-menu">
       <span class="menu-icon">≡</span>
       <ul class="menu-lists" style="display: none;">
-          <li class="menu-list"><%= link_to '積読', user_signed_in? ? bookmarks_user_path(current_user) : root_path %></li>
-          <li class="menu-list"><%= link_to 'フォロー', user_signed_in? ? follow_user_path(current_user) : root_path %></li>
-          <li class="menu-list"><%= link_to 'マイページ', user_signed_in? ? user_path(current_user) : root_path %></li>
-          <li class="menu-list"><%= link_to 'トップページ', root_path, class: "return-top-page" %></li>
+        <li class="menu-list"><%= link_to '積読', user_signed_in? ? bookmarks_user_path(current_user) : root_path %></li>
+        <li class="menu-list"><%= link_to 'フォロー', user_signed_in? ? follow_user_path(current_user) : root_path %></li>
+        <li class="menu-list"><%= link_to 'マイページ', user_signed_in? ? user_path(current_user) : root_path %></li>
+        <li class="menu-list"><%= link_to 'トップページ', root_path, class: "return-top-page" %></li>
       </ul>
     </div>
   </div>

@@ -17,12 +17,12 @@
         <div class="show-story-item2">
           <div class="show-character-count"> <%= "#{@story.body.length}文字" %></div>
           <div class="show-post-date"><%= @story.created_at.strftime("%Y.%m.%d") %></div>
-          <div class="detail">
+          <div class="story-menu">
             <% if user_signed_in? && current_user.id == @story.user_id %>
-            <span class="toggle-detail">…</span>
-            <ul class="detail_list" style="display: none;">
-              <li><%= link_to '編集', edit_story_path(@story.id), method: :get, class: "story-edit" %></li>
-              <li><%= link_to '削除', story_path(@story.id), data: {turbo_method: :delete}, class:"story-destroy" %></li>
+            <span class="story-menu-icon">…</span>
+            <ul class="story-menu-lists" style="display: none;">
+              <li class="story-menu-list"><%= link_to '編集', edit_story_path(@story.id), method: :get, class: "story-edit" %></li>
+              <li class="story-menu-list"><%= link_to '削除', story_path(@story.id), data: {turbo_method: :delete}, class:"story-destroy" %></li>
             </ul>
             <% end %>
           </div>
@@ -73,9 +73,9 @@
               <div class="comment-post-date"><%= comment.created_at.strftime("%Y.%m.%d") %></div>
               <% if user_signed_in? && current_user.id == comment.user_id %>
               <div class="comment-delete">
-                <span class="toggle-comment-delete">…</span>
-                <ul class=comment-action-list style="display: none;">
-                  <li><%= link_to '削除', story_comment_path(@story, comment), data: {turbo_method: :delete}, class:"comment-destroy" %></li>
+                <span class="comment-menu-icon">…</span>
+                <ul class=comment-menu-lists style="display: none;">
+                  <li class="comment-menu-list"><%= link_to '削除', story_comment_path(@story, comment), data: {turbo_method: :delete}, class:"comment-destroy" %></li>
                 </ul>
               </div>
               <% end %>

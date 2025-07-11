@@ -1,6 +1,6 @@
 /* メイン */
 .show-main {
-  background: linear-gradient(to bottom, #17184b, #274a78);
+  background: linear-gradient(to bottom, #17184b, #507ea4);
 }
 
 .show-main-contents {
@@ -60,13 +60,8 @@
 
 .show-post-date {
   margin: 5px;
+  margin-right: 20px;
 }
-
-.detail {
-  margin: 5px;
-  margin-left: 10px;
-}
-
 
 /* タイトル本文 */
 .show-story-title {
@@ -83,21 +78,34 @@
   white-space: pre-wrap;
 }
 
-.detail {
+/* 編集削除メニュー */
+.story-menu {
   position: relative;
 }
 
-.detail_list {
+.story-menu-icon {
+  display: block;
+  margin-top: 5px;
+  text-shadow: 1px 1px 3px yellowgreen;
+}
+
+.story-menu-lists {
   position: absolute;
   top: 100%;
-  right: 0;
+  right: 0%;
   width: max-content;
   white-space: nowrap;
   display: none;
-  background: #c1e4e9;
-  border: 1px solid #ccc;
-  padding: 4px 8px;
+  background-color: #c1e4e9;;
+  padding: 0 8px 8px 8px;
   z-index: 10;
+  box-shadow: 2px 2px 3px #eaf4fc;
+}
+
+.story-menu-list {
+  color: #17184b;
+  border-bottom: 1px solid gray;
+  margin-top: 10px;
 }
 
 
@@ -197,21 +205,31 @@
   margin-right: 10px;
 }
 
+/* 削除メニュー */
 .comment-delete {
   position: relative;
-  color: 
 }
 
+.comment-menu-icon {
+  color: #17184b;
+  text-shadow: 1px 1px 3px gray;
+}
 
-.comment-action-list {
+.comment-menu-lists {
   position: absolute;
   top: 100%;
-  right: 0;
+  right: 0%;
   width: max-content;
   white-space: nowrap;
   display: none;
-  background: #c1e4e9;
-  border: 1px solid #ccc;
+  background-color: #c1e4e9;
   padding: 4px 8px;
   z-index: 10;
+  box-shadow: 3px 3px 5px gray;
+}
+
+.comment-menu-list {
+  color: #17184b;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
