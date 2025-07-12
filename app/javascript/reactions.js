@@ -1,7 +1,7 @@
 const initReactions = () => {
   console.log("reactions.js 初期化されました！");
   const storyList = document.querySelector(".reaction-lists");
-  if (!storyList) return; // 詳細ページ以外では処理しない
+  if (!storyList) return;
   const storyId = storyList.dataset.storyId;
 
   document.querySelectorAll(".reaction").forEach(el => {
@@ -15,10 +15,16 @@ const initReactions = () => {
           'X-CSRF-Token': document.querySelector('[name="csrf-token"]').content
         },
         body: JSON.stringify({ kind: kind })
-      }).then(() => {
-        document.querySelectorAll(".reaction").forEach(item => item.classList.remove("active"));
-        el.classList.add("active");
-      });
+      }).then(response => response.json())
+        .then(data => {
+          document.querySelectorAll(".reaction").forEach(item => item.classList.remove("active"));
+          el.classList.add("active");
+
+          document.querySelectorAll(".reaction-count").forEach(span => {
+            const kindKey = span.dataset.kind;
+            span.textContent = data.counts[kindKey] || 0;
+          });
+        });
     });
   });
 };

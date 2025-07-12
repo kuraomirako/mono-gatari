@@ -39,7 +39,10 @@
         <% reacted_kind = @story.reactions.find_by(user_id: current_user&.id)&.kind %>
         <% %w(涙 驚 笑 手).each do |kind| %>
           <div class="reaction <%= 'active' if kind == reacted_kind %>" data-kind="<%= kind %>">
-            <div class="one-reaction">（<%= kind %>）</div>
+            <div class="one-reaction">
+              （<%= kind %>）
+              <span class="reaction-count" data-kind="<%= kind %>"><%= @story.reaction_count(kind) %></span>
+            </div>
           </div>
         <% end %>
       </div>
@@ -54,7 +57,7 @@
       <% end %>
     </div>
 
-    <div class="comment-content"><!-- コメント欄 -->
+    <div class="comment-content"><!-- コメント送信欄 -->
       <% if current_user %>
         <%= form_with model: [@story, Comment.new], local: true, data: { turbo: false } do |f| %>
           <div class="send-comment">

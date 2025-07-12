@@ -9,6 +9,10 @@ class Story < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many :bookmarking_users, through: :bookmarks, source: :user
 
+  def reaction_count(kind)
+    reactions.where(kind: kind).count
+  end
+
   validates :title, presence: true
   validates :body, length: { minimum: 300, maximum: 10000 }
   validates :category_id, :genre_id, numericality: { other_than: 1}

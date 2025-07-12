@@ -1,14 +1,17 @@
 # アプリケーション名
 ---
 者-モノ-語り　（モノガタリ）
+<br>
 
 # アプリケーション概要
 ---
 物語を投稿する、読む　長文専門のプラットフォーム
+<br>
 
 # URL
 ---
 https://mono-gatari.onrender.com
+<br>
 
 # テスト用アカウント
 ---
@@ -16,6 +19,7 @@ https://mono-gatari.onrender.com
 ・Basic認証パスワード：7700
 ・メールアドレス：ac.test@example.com
 ・パスワード：test000
+<br>
 
 # 利用方法
 ---
@@ -36,6 +40,7 @@ https://mono-gatari.onrender.com
 - 物語を読むだけなら会員登録不要
 
 ......................................................................................
+<br>
 
 # アプリケーションを作成した背景
 ---
@@ -49,17 +54,19 @@ https://mono-gatari.onrender.com
 
 端末の中とはいえ、落ち着ける場所、ふとした時に着たくなる場所を作りたいと思いました。
 
-今は、パッとつぶやけるアプリやブログ、小説投稿アプリなど... 類似アプリはたくさんあると思います。
+今は、パッとつぶやけるアプリやブログ、小説投稿アプリなど… 類似アプリはたくさんあると思います。
 その中で『その 人物＝者 のお話しをメインとした』“長文専門”のアプリケーションを目指しました。
 
 
 # 実装予定の機能
 ---
 下書き保存機能、検索機能、退会機能　を実装予定
+<br>
 
 # データベース設計
 ---
 
+<br>
 
 # 開発環境
 ---
@@ -74,8 +81,7 @@ https://mono-gatari.onrender.com
 ---
 - 長文専門のため、300文字未満は投稿できないように設定
 - 落ち着ける空間作りのため、フォロー数/フォロワー数は、自分自身しか見れないように設定
----
-
+<br>
 
 #### ◇　users テーブル
 | Column             | Type   | Options     |
@@ -101,12 +107,14 @@ has_many :bookmarked_stories, through: :bookmarks, source: :story
 ......................................................................................
 
 #### ◇　stories テーブル
-| Column             | Type   | Options     |
-| ------------------ | ------ | ----------- |
-| title       | string  | null: false |
-| body        | text    | null: false |
-| category_id | integer | null: false |
-| genre_id    | integer | null: false |
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| title       | string     | null: false                    |
+| body        | text       | null: false                    |
+| category_id | integer    | null: false                    |
+| genre_id    | integer    | null: false                    |
+| user        | references | null: false, foreign_key: true |
+
 
 #### ⇆　association
 belongs_to :user
@@ -119,16 +127,53 @@ has_many :bookmarking_users, through: :bookmarks, source: :user
 
 ......................................................................................
 
+#### ◇　comments テーブル
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| comment_box | text       | null: false                    |
+| user        | references | null: false, foreign_key: true |
+| story       | references | null: false, foreign_key: true |
 
-
-
+#### ⇆　association
+belongs_to :user
+belongs_to :story
 
 ......................................................................................
 
+#### ◇　relationships テーブル
+| Column      | Type    | Options     |
+| ----------- | ------- | ----------- |
+| follower_id | integer | null: false |
+| followed_id | integer | null: false |
+
+#### ⇆　association
+belongs_to :follower, class_name: "User"
+belongs_to :followed, class_name: "User"
 
 ......................................................................................
 
+#### ◇　reactions テーブル
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| story  | references | null: false, foreign_key: true |
+| kind   | string     | null: false                    |
+
+#### ⇆　association
+belongs_to :user
+belongs_to :story
+
 ......................................................................................
+
+#### ◇　bookmarks テーブル
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| story  | references | null: false, foreign_key: true |
+
+#### ⇆　association
+belongs_to :user
+belongs_to :story
 
 ......................................................................................
 
