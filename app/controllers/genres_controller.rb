@@ -3,6 +3,6 @@ class GenresController < ApplicationController
     @genre = Genre.find(params[:id])
     @genres = Genre.all
     @categories = Category.all
-    @stories = Story.where(genre_id: @genre.id).order(created_at: :desc)
+    @stories = Story.published.where(genre_id: @genre.id).order(published_at: :desc)
   end
 end
