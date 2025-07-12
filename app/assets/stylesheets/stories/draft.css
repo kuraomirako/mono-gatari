@@ -7,6 +7,10 @@
   padding-bottom: 50px;
 }
 
+.draft-main-contents {
+  min-height: 500px;
+}
+
 .draft-title {
   font-size: 25px;
   font-weight: 600;

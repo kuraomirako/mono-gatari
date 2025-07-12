@@ -32,6 +32,8 @@ https://mono-gatari.onrender.com
 - 未ログインでも物語を最後まで読むことができます。
 - ただし、コメントやマイページの作成、その他の機能は利用できません。
 
+[![Image from Gyazo](https://i.gyazo.com/ee6f89aa58df59e3280e9347ebffe300.gif)](https://gyazo.com/ee6f89aa58df59e3280e9347ebffe300)
+
 <br>
 
 # アプリケーションを作成した背景
