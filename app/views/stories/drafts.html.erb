@@ -1,0 +1,22 @@
+<%= render "shared/header" %>
+<div class="draft-main">
+
+  <div class="draft-main-contents">
+    <div class="draft-title">🔒下書き一覧</div>
+    <% if @drafts.any? %><!-- １つの下書き -->
+      <% @drafts.each do |story| %>
+        <div class="one-draft">
+          <div class="draft-info">
+            <p class="create-date">作成日：<%= story.created_at.strftime("%Y.%m.%d") %></p>
+            <div class="draft-delete-btn"><%= link_to "削除", story_path(story), method: :delete, data: {turbo_method: :delete}, class: "draft-delete-btn" %></div>
+          </div>
+          <div class="tentative_title"><%= link_to story.title.presence || "タイトル未定", edit_story_path(story) %></div>
+        </div>
+      <% end %>
+    <% else %>
+      <p class="empty-draft">保存された下書きはありません</p>
+    <% end %>
+  </div>
+
+</div>
+<%= render "shared/footer" %>

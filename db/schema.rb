@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_07_05_071835) do
+ActiveRecord::Schema[7.1].define(version: 2025_07_12_141141) do
   create_table "bookmarks", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "story_id", null: false
@@ -56,10 +56,11 @@ ActiveRecord::Schema[7.1].define(version: 2025_07_05_071835) do
     t.text "body", null: false
     t.integer "category_id", null: false
     t.integer "genre_id", null: false
-    t.boolean "draft", default: false, null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0, null: false
+    t.datetime "published_at"
     t.index ["user_id"], name: "index_stories_on_user_id"
   end
 
@@ -76,7 +77,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_07_05_071835) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "profile"
-    t.string "icon"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

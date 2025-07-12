@@ -35,7 +35,9 @@
 
   <div class="post-confirm-area"><!--確認エリア-->
     <div class="post-btn-box">
-      <%= f.submit "投稿する", class: "post-btn" %>
+      <%= f.submit "投稿する", class: "post-btn", data: { status: "published" } %>
+      <%= f.submit "下書き保存", class: "post-btn", data: { status: "draft" } %>
+      <span class="draft-index"><%= link_to '下書き一覧を見る', drafts_stories_path, class: "draft-page" %></span>
     </div>
   </div>
 

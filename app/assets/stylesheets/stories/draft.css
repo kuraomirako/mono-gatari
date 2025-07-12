@@ -1,0 +1,55 @@
+/* メイン */
+.draft-main {
+  background-color: #c1e4e9;
+  padding-top: 20px;
+  padding-left: 120px;
+  padding-right: 120px;
+  padding-bottom: 50px;
+}
+
+.draft-title {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.one-draft {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.draft-info {
+  display: flex;
+}
+
+.create-date {
+  font-size: 15px;
+  color: gray;
+  margin-right: 20px;
+}
+
+.tentative_title a {
+  margin-top: 3px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #17184b;
+  text-decoration: underline;
+}
+
+.draft-delete-btn {
+  background-color: #5383c3;
+  color: white;
+  padding: 1px 6px;
+  font-size: 13px;
+  border: none;
+  border-radius: 10px;
+}
+
+
+.empty-draft {
+  margin-top: 3px;
+  font-size: 15px;
+  color: gray;
+}

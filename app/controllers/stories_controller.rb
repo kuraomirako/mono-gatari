@@ -4,7 +4,7 @@ class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
 
   def index
-    @latest_stories = Story.order(created_at: :desc).limit(5)
+    @latest_stories = Story.published.order(published_at: :desc).limit(5)
     @categories = Category.all
     @genres = Genre.all
   end
@@ -15,11 +15,28 @@ class StoriesController < ApplicationController
 
   def create
     @story = current_user.stories.new(story_params)
-    if @story.save
-      redirect_to root_path, notice: '投稿が完了しました'
+
+    if params[:commit].include?("下書き")
+      @story.status = "draft"
     else
+      @story.status = "published"
+      @story.published_at = Time.current
+    end
+
+    if @story.save
+      if @story.draft?
+        redirect_to drafts_stories_path
+      else
+        redirect_to root_path
+      end
+    else
+      set_select_values
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def drafts
+    @drafts = current_user.stories.draft.order(created_at: :desc)
   end
 
   def show
@@ -30,8 +47,19 @@ class StoriesController < ApplicationController
   end
 
   def update
+    if params[:commit].include?("下書き")
+      @story.status = "draft"
+    else
+      @story.status = "published"
+      @story.published_at ||= Time.current
+    end
+
     if @story.update(story_params)
-      redirect_to story_path(@story)
+      if @story.draft?
+        redirect_to drafts_stories_path
+      else
+        redirect_to story_path(@story)
+      end
     else
       render :edit, status: :unprocessable_entity
     end

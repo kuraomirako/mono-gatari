@@ -109,6 +109,7 @@
 .post-btn-box {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .post-btn {
@@ -119,6 +120,12 @@
   font-size: 20px;
   border-radius: 10px;
   border: 1px solid gray;
+}
+
+.draft-index a {
+  color: #17184b;
+  text-decoration: underline;
+  text-shadow: 1px 1px 3px #eaf4fc;
 }
 
 .field-error {

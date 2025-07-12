@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :stories do
     resources :comments, only: [:create, :destroy]
     resources :reactions, only: [:create]
+    collection do
+      get :drafts
+    end
   end
   resources :users, only: [:show, :edit, :update] do
     get 'bookmarks', on: :member
