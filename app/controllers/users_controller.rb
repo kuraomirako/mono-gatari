@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @stories = @user.stories.order(created_at: :desc)
+    @stories = @user.stories.published.order(published_at: :desc)
   end
 
   def edit
