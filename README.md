@@ -107,13 +107,15 @@ has_many :bookmarked_stories, through: :bookmarks, source: :story
 ......................................................................................
 
 #### ◇　stories テーブル
-| Column      | Type       | Options                        |
-| ----------- | ---------- | ------------------------------ |
-| title       | string     | null: false                    |
-| body        | text       | null: false                    |
-| category_id | integer    | null: false                    |
-| genre_id    | integer    | null: false                    |
-| user        | references | null: false, foreign_key: true |
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| title        | string     | null: false                    |
+| body         | text       | null: false                    |
+| category_id  | integer    | null: false                    |
+| genre_id     | integer    | null: false                    |
+| status       | integer    | null: false                    |
+| published_at | datetime   | null: false                    |
+| user         | references | null: false, foreign_key: true |
 
 
 #### ⇆　association
