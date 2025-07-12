@@ -1,6 +1,6 @@
 # アプリケーション名
 ---
-者-モノ-語り　（モノガタリ）
+者-モノ-語り　（読み：ものがたり）
 <br>
 
 # アプリケーション概要
@@ -23,23 +23,15 @@ https://mono-gatari.onrender.com
 
 # 利用方法
 ---
-### 物語投稿
----
-......................................................................................
-《　会員登録の特権　》
-- 『コメントの送信/積読機能(ブックマーク)の利用/フォロー機能/マイページ作成』が利用可能
+1.トップページのヘッダーにある「新規登録ボタン」をクリックし、ユーザー登録を行う
+2.ヘッダー右上にある「投稿する」ボタンをクリック
+3.カテゴリー/ジャンルをプルダウンから選択し、タイトル/本文を文字数制限に沿って入力
+4.投稿する場合は「投稿する」ボタンをクリック｜下書きにしたい場合は「下書き保存」ボタンをクリック
+5.投稿した物語は、詳細ページから「編集」「削除」「下書き保存に戻すこと」が可能
 
-- 会員登録は、ヘッダーの「会員登録」ボタンから可能
+- 未ログインでも物語を最後まで読むことができます。
+- ただし、コメントやマイページの作成、その他の機能は利用できません。
 
-......................................................................................
-
-《　物語投稿の仕方　》
-- ヘッダーの「投稿する」ボタンから、「カテゴリー/ジャンル/タイトル/本文」を入力すると投稿ができる
-
-
-- 物語を読むだけなら会員登録不要
-
-......................................................................................
 <br>
 
 # アプリケーションを作成した背景
@@ -60,21 +52,33 @@ https://mono-gatari.onrender.com
 
 # 実装予定の機能
 ---
-下書き保存機能、検索機能、退会機能　を実装予定
+- 退会機能
+- フッターの充実（お問い合わせ、よくある質問などを追加）
 <br>
 
 # データベース設計
 ---
+![ER図](./images/er.png)
+
+![transition図](./images/transition.png)
 
 <br>
 
 # 開発環境
 ---
-・フレームワーク：Ruby On Rails
-・言語：Ruby、JavaScript、HTML、CSS
-・データベース：MySQL(開発環境)、PostgreSQL(本番環境)
-・開発ツール：VSCode、GitHub、Render
-・テスト：RSpec、FactoryBot
+- フレームワーク：Ruby On Rails
+- 言語：Ruby、JavaScript、HTML、CSS
+- データベース：MySQL(開発環境)、PostgreSQL(本番環境)
+- 開発ツール：VSCode、GitHub、Render
+<br>
+
+# ローカルでの動作方法
+---
+以下のコマンドを順に実行
+% git clone https://github.com/kuraomirako/mono-gatari.git
+% yarn
+% rails db:create db:migrate
+% bin/dev
 
 
 # 工夫したポイント
@@ -82,101 +86,3 @@ https://mono-gatari.onrender.com
 - 長文専門のため、300文字未満は投稿できないように設定
 - 落ち着ける空間作りのため、フォロー数/フォロワー数は、自分自身しか見れないように設定
 <br>
-
-#### ◇　users テーブル
-| Column             | Type   | Options     |
-| ------------------ | ------ | ----------- |
-| nickname           | string | null: false |
-| email              | string | null: false |
-| encrypted_password | string | null: false |
-| last_name          | string | null: false |
-| first_name         | string | null: false |
-| birthday           | date   | null: false |
-
-#### ⇆　association
-has_many :stories
-has_many :comments
-has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
-has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
-has_many :following, through: :active_relationships, source: :followed
-has_many :followers, through: :passive_relationships, source: :follower
-has_many :reactions, dependent: :destroy
-has_many :bookmarks, dependent: :destroy
-has_many :bookmarked_stories, through: :bookmarks, source: :story
-
-......................................................................................
-
-#### ◇　stories テーブル
-| Column       | Type       | Options                        |
-| ------------ | ---------- | ------------------------------ |
-| title        | string     | null: false                    |
-| body         | text       | null: false                    |
-| category_id  | integer    | null: false                    |
-| genre_id     | integer    | null: false                    |
-| status       | integer    | null: false                    |
-| published_at | datetime   | null: false                    |
-| user         | references | null: false, foreign_key: true |
-
-
-#### ⇆　association
-belongs_to :user
-belongs_to_active_hash :category
-belongs_to_active_hash :genre
-has_many :comments
-has_many :reactions, dependent: :destroy
-has_many :bookmarks, dependent: :destroy
-has_many :bookmarking_users, through: :bookmarks, source: :user
-
-......................................................................................
-
-#### ◇　comments テーブル
-| Column      | Type       | Options                        |
-| ----------- | ---------- | ------------------------------ |
-| comment_box | text       | null: false                    |
-| user        | references | null: false, foreign_key: true |
-| story       | references | null: false, foreign_key: true |
-
-#### ⇆　association
-belongs_to :user
-belongs_to :story
-
-......................................................................................
-
-#### ◇　relationships テーブル
-| Column      | Type    | Options     |
-| ----------- | ------- | ----------- |
-| follower_id | integer | null: false |
-| followed_id | integer | null: false |
-
-#### ⇆　association
-belongs_to :follower, class_name: "User"
-belongs_to :followed, class_name: "User"
-
-......................................................................................
-
-#### ◇　reactions テーブル
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| story  | references | null: false, foreign_key: true |
-| kind   | string     | null: false                    |
-
-#### ⇆　association
-belongs_to :user
-belongs_to :story
-
-......................................................................................
-
-#### ◇　bookmarks テーブル
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| story  | references | null: false, foreign_key: true |
-
-#### ⇆　association
-belongs_to :user
-belongs_to :story
-
-......................................................................................
-
-......................................................................................
