@@ -15,10 +15,10 @@ https://mono-gatari.onrender.com
 
 # テスト用アカウント
 ---
-・Basic認証ID：kuraomirako
-・Basic認証パスワード：7700
-・メールアドレス：ac.test@example.com
-・パスワード：test000
+・Basic認証ID：kuraomirako  
+・Basic認証パスワード：7700  
+・メールアドレス：ac.test@example.com  
+・パスワード：test000  
 <br>
 
 # 利用方法
