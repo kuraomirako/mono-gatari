@@ -1,20 +1,16 @@
 # アプリケーション名
----
 者-モノ-語り　（読み：ものがたり）
 <br>
 
 # アプリケーション概要
----
 物語を投稿する、読む　長文専門のプラットフォーム
 <br>
 
 # URL
----
 https://mono-gatari.onrender.com
 <br>
 
 # テスト用アカウント
----
 ・Basic認証ID：kuraomirako  
 ・Basic認証パスワード：7700  
 ・メールアドレス：ac.test@example.com  
@@ -22,12 +18,11 @@ https://mono-gatari.onrender.com
 <br>
 
 # 利用方法
----
-1.トップページのヘッダーにある「新規登録ボタン」をクリックし、ユーザー登録を行う
-2.ヘッダー右上にある「投稿する」ボタンをクリック
-3.カテゴリー/ジャンルをプルダウンから選択し、タイトル/本文を文字数制限に沿って入力
-4.投稿する場合は「投稿する」ボタンをクリック｜下書きにしたい場合は「下書き保存」ボタンをクリック
-5.投稿した物語は、詳細ページから「編集」「削除」「下書き保存に戻すこと」が可能
+1.トップページのヘッダーにある「新規登録ボタン」をクリックし、ユーザー登録を行う  
+2.ヘッダー右上にある「投稿する」ボタンをクリック  
+3.カテゴリー/ジャンルをプルダウンから選択し、タイトル/本文を文字数制限に沿って入力  
+4.投稿する場合は「投稿する」ボタンをクリック｜下書きにしたい場合は「下書き保存」ボタンをクリック  
+5.投稿した物語は、詳細ページから「編集」「削除」「下書き保存に戻すこと」が可能  
 
 - 未ログインでも物語を最後まで読むことができます。
 - ただし、コメントやマイページの作成、その他の機能は利用できません。
@@ -53,13 +48,11 @@ https://mono-gatari.onrender.com
 
 
 # 実装予定の機能
----
 - 退会機能
 - フッターの充実（お問い合わせ、よくある質問などを追加）
 <br>
 
 # データベース設計
----
 ![ER図](./images/er.png)
 
 ![transition図](./images/transition.png)
@@ -67,7 +60,6 @@ https://mono-gatari.onrender.com
 <br>
 
 # 開発環境
----
 - フレームワーク：Ruby On Rails
 - 言語：Ruby、JavaScript、HTML、CSS
 - データベース：MySQL(開発環境)、PostgreSQL(本番環境)
@@ -75,16 +67,14 @@ https://mono-gatari.onrender.com
 <br>
 
 # ローカルでの動作方法
----
-以下のコマンドを順に実行
-% git clone https://github.com/kuraomirako/mono-gatari.git
-% yarn
-% rails db:create db:migrate
-% bin/dev
+以下のコマンドを順に実行  
+% git clone https://github.com/kuraomirako/mono-gatari.git  
+% yarn  
+% rails db:create db:migrate  
+% bin/dev  
 
 
 # 工夫したポイント
----
 - 長文専門のため、300文字未満は投稿できないように設定
 - 落ち着ける空間作りのため、フォロー数/フォロワー数は、自分自身しか見れないように設定
 <br>
