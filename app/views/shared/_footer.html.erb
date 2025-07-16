@@ -3,9 +3,11 @@
         <ul class="information">
           <li class="info">お問い合わせ</li>
           <li class="info">FAQ</li>
-          <% if current_user %>
-            <li class="info"><%= button_to "退会する", withdraw_user_path(current_user), method: :patch, data: { confirm: "本当に退会しますか？" } %></li>
-          <% end %>
+          <li class="info">
+            <% if current_user %>
+              <%= link_to "退会手続き", confirm_withdraw_user_path(current_user), class: "withdraw-link" %></li>
+           <% end %>
+          </li>
         </ul>
         <div class="copylight">Copyright©2025 kuraomirako Mono-mono-gatari</div>
       </div>

@@ -8,7 +8,7 @@
         <%= link_to "#{@story.user.nickname}", user_signed_in? ? user_path(@story.user) : root_path, class: "user-name-link" %>
         <span class=user-name-sub> さんの投稿</span>
       <% else %>
-        <span class="retired-user-name">退会したユーザーの投稿です</span>
+        <span class="retired-user-name">退会ユーザーの投稿です</span>
       <% end %>
     </div>
 
@@ -75,7 +75,11 @@
       <div class="all-comments"><!-- コメント一覧 -->
         <% @comments.each do |comment| %>
           <div class="one-comment"><!-- １つのコメント -->
-            <div class="comment-user"><%= comment.user.nickname %>：<%= comment.comment_box %></div>
+            <% if comment.user.present? && !comment.user.is_deleted? %>
+              <div class="comment-user"><%= comment.user.nickname %>：<%= comment.comment_box %></div>
+            <% else %>
+              <div class="comment-user"><span class="retired-user-name">退会ユーザー</span>：<%= comment.comment_box %></div>	
+            <% end %>
             <div  class="one-comment-info">
               <div class="comment-post-date"><%= comment.created_at.strftime("%Y.%m.%d") %></div>
               <% if user_signed_in? && current_user.id == comment.user_id %>
@@ -89,7 +93,6 @@
             </div>
           </div>
         <% end %>
-
       </div>
     </div>
 

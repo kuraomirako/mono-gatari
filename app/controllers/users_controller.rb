@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :follow]
+  before_action :reject_deleted_user, only: [:show]
   before_action :correct_user, only: [:edit, :update]
   before_action :correct_user_for_follow, only: [:follow]
 
@@ -30,11 +31,25 @@ class UsersController < ApplicationController
     @following = @user.following.where(is_deleted: false)
   end
 
+  def confirm_withdraw
+    @user = User.find(params[:id])
+    redirect_to root_path unless current_user == @user
+  end
+
   def withdraw  # 退会処理
     @user = current_user
     @user.update(is_deleted: true)
     reset_session
     redirect_to root_path
+  end
+
+  def withdraw_done
+  end
+
+  def reject_deleted_user
+    if @user.is_deleted?
+      redirect_to root_path
+    end
   end
 
 

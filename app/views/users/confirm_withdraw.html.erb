@@ -1,0 +1,28 @@
+<%= render "shared/header" %>
+<div class="confirm-withdraw-main">
+
+  <div class="confirm-withdraw-area">
+    <div class="retired-title">退会について</div>
+
+    <div class="retired-explanation">
+      <p>○ 退会後も投稿した物語やコメントは削除されません。<br>
+      　※残したくないものは、退会前にご自身で削除をお願いいたします。<br>
+      　尚、退会後のお名前については「退会ユーザー」と表示されます。</p>
+      <br>
+      <p>○ アカウント情報（メールアドレス等）は削除されます。</p>
+      <br>
+      <p>○ 一度退会すると、同じアカウントでの再ログインはできません。</p>
+      <br>
+      <p>○ 上記内容に同意いただけます場合は、以下の退会ボタンを押してください。<br>
+      　※退会ボタンを押すことで、上記内容に同意いただいたこととなります。</p>
+    </div>
+
+    <div class="confirm-buttons">
+      <%= button_to "退会する", withdraw_user_path(current_user), method: :patch, data: { confirm: "本当に退会しますか？" }, class: "btn-danger" %>
+      <%= link_to "キャンセルして戻る", root_path(current_user), class: "btn-secondary" %>
+    </div>
+
+  </div>
+
+</div>
+<%= render "shared/footer" %>

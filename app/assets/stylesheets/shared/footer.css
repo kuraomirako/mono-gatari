@@ -6,12 +6,16 @@ footer {
 
 .footer-items {
   height: 70px;
-  color: white;
+  color: #eaf4fc;
 }
 
 .information {
   list-style: none;
   text-align: center;
+}
+
+.info a {
+  color: #eaf4fc;
 }
 
 .copylight {

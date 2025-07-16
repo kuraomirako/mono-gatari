@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     member do
       get :bookmarks
       get :follow
+      get :confirm_withdraw
       patch :withdraw
     end
   end
