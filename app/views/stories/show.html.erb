@@ -4,8 +4,12 @@
   <div class="show-main-contents">
 
     <div class="user-name"><!-- 投稿者名 -->
-      <%= link_to "#{@story.user.nickname}", user_signed_in? ? user_path(@story.user) : root_path, class: "user-name-link" %>
-      <span class=user-name-sub> さんの投稿</span>
+      <% if @story.user.present? && !@story.user.is_deleted? %>
+        <%= link_to "#{@story.user.nickname}", user_signed_in? ? user_path(@story.user) : root_path, class: "user-name-link" %>
+        <span class=user-name-sub> さんの投稿</span>
+      <% else %>
+        <span class="retired-user-name">退会したユーザーの投稿です</span>
+      <% end %>
     </div>
 
     <div class="show-story-content"><!-- ストーリー配置 -->

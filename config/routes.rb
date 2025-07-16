@@ -9,9 +9,13 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:show, :edit, :update] do
-    get 'bookmarks', on: :member
-    get 'follow', on: :member
+    member do
+      get :bookmarks
+      get :follow
+      patch :withdraw
+    end
   end
+
   resources :categories, only: [:show]
   resources :genres, only: [:show]
   resources :relationships, only: [:create, :destroy]

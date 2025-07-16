@@ -12,8 +12,14 @@
 }
 
 /* 投稿者名 */
-.user-name-link {
+.user-name-link, .retired-user {
   color: #eaf4fc;
+  font-size: 20px;
+  border-bottom: 1px solid gray;
+}
+
+.retired-user-name {
+  color: gray;
   font-size: 20px;
   border-bottom: 1px solid gray;
 }

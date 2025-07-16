@@ -26,8 +26,15 @@ class UsersController < ApplicationController
   end
 
   def follow
-    @followers = @user.followers
-    @following = @user.following
+    @followers = @user.followers.where(is_deleted: false)
+    @following = @user.following.where(is_deleted: false)
+  end
+
+  def withdraw  # 退会処理
+    @user = current_user
+    @user.update(is_deleted: true)
+    reset_session
+    redirect_to root_path
   end
 
 

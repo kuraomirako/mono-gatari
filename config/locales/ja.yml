@@ -31,3 +31,5 @@ ja:
       not_found_in_database: "メールアドレスまたはパスワードが違います"
       timeout: "セッションの有効期限が切れました。もう一度ログインしてください"
       inactive: "アカウントが有効化されていません"
+      deleted_account: "こちらのアカウントは退会済みです"
+      unauthenticated: "ログインもしくはアカウント登録が必要です"

@@ -2,6 +2,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  def active_for_authentication?
+    super && !is_deleted
+  end
+
+  def inactive_message
+    !is_deleted ? super : :deleted_account
+  end
+
   has_many :stories
   has_many :comments
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
