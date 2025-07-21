@@ -3,6 +3,7 @@
         <ul class="information">
           <li class="info">お問い合わせ</li>
           <li class="info">FAQ</li>
+          <li class="info"><%= link_to "利用規約", terms_path %></li>
           <li class="info">
             <% if current_user %>
               <%= link_to "退会手続き", confirm_withdraw_user_path(current_user), class: "withdraw-link" %></li>
