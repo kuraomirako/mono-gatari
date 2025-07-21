@@ -5,7 +5,7 @@ footer {
 }
 
 .footer-items {
-  height: 70px;
+  min-height: 70px;
   color: #eaf4fc;
 }
 
