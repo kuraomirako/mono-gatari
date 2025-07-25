@@ -1,8 +1,7 @@
 <footer>
       <div class="footer-items">
         <ul class="information">
-          <li class="info">お問い合わせ</li>
-          <li class="info">FAQ</li>
+          <li class="info"><%= link_to "お問い合わせ", contact_path %></li>
           <li class="info"><%= link_to "利用規約", terms_path %></li>
           <li class="info">
             <% if current_user %>

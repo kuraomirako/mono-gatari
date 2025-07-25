@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'terms', to: 'static#terms'
+  get 'contact', to: 'pages#contact'
   root to: 'stories#index'
   resources :stories do
     resources :comments, only: [:create, :destroy]
